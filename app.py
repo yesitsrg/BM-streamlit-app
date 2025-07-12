@@ -1,6 +1,7 @@
 # main.py
 """
 Main application entry point for Beisman Maps Management System
+
 """
 
 import streamlit as st
