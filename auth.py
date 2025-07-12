@@ -9,7 +9,6 @@ from config import AUTH_CONFIG
 class AuthManager:
     """
     Handles authentication operations
-    
     """
     
     def __init__(self):
