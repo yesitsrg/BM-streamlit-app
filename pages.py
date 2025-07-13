@@ -152,8 +152,22 @@ class PageHandlers:
         ui_components.render_results_container_start()
         
         if filtered_data is not None and not filtered_data.empty:
-            table_html = ui_components.render_data_table(filtered_data)
-            st.markdown(table_html, unsafe_allow_html=True)
+            # Create header
+            col_map = {"Details": 1, "Number": 2, "Drawer": 2, "PropertyDetails": 4}
+            cols = st.columns(list(col_map.values()))
+            for i, col_name in enumerate(col_map.keys()):
+                cols[i].write(f"**{col_name}**")
+
+            for index, row in filtered_data.iterrows():
+                cols = st.columns(list(col_map.values()))
+                if cols[0].button("Details", key=f"details_{row['Number']}"):
+                    st.session_state.selected_track_number = row['Number']
+                    navigate_to_page('browse_entities')
+                    rerun_app()
+                
+                cols[1].write(row['Number'])
+                cols[2].write(row['Drawer'])
+                cols[3].write(row['PropertyDetails'])
             
             record_count = len(filtered_data)
             if search_term:
@@ -172,9 +186,82 @@ class PageHandlers:
     
     def show_browse_entities(self):
         """
-        Show browse entities page
+        Show map details page
         """
-        self.show_placeholder_page("Browse Entities", "Browse Entities")
+        ui_components.render_main_container_start()
+        ui_components.render_window_header("Map Information")
+        ui_components.render_content_area_start()
+
+        if 'selected_track_number' in st.session_state:
+            track_number = st.session_state.selected_track_number
+            # This assumes a function get_map_by_track_number exists in db_manager
+            # and returns a DataFrame.
+            map_details_df = db_manager.get_map_by_track_number(track_number)
+
+            if map_details_df is not None and not map_details_df.empty:
+                map_details = map_details_df.iloc[0]
+                
+                st.markdown("---")
+                
+                col1, col2 = st.columns([1, 3])
+                with col1:
+                    st.write("Trace Number")
+                    st.write("Drawer")
+                    st.write("Description")
+                with col2:
+                    st.write(f"{map_details.get('Number', 'N/A')}")
+                    st.write(f"{map_details.get('Drawer', 'N/A')}")
+                    st.write(f"{map_details.get('PropertyDetails', 'N/A')}")
+
+                st.markdown("---")
+
+                st.info("No clients associated with this map.")
+                
+                st.markdown("---")
+
+                # Bottom navigation links
+                cols = st.columns(6)
+                with cols[0]:
+                    if st.button("Home", key="detail_home"):
+                        navigate_to_page('home')
+                with cols[1]:
+                    if st.button("Back", key="detail_back"):
+                        navigate_to_page('browse_maps')
+                with cols[2]:
+                    if st.button("Browse Maps", key="detail_browse_maps"):
+                        navigate_to_page('browse_maps')
+                with cols[3]:
+                    if st.button("Browse Entities", key="detail_browse_entities"):
+                        navigate_to_page('browse_entities')
+                with cols[4]:
+                    if st.button("Insert Map", key="detail_insert_map"):
+                        navigate_to_page('insert_map')
+                with cols[5]:
+                    if st.button("Update/Delete", key="detail_update_delete"):
+                        st.session_state.selected_track_number = track_number
+                        navigate_to_page('update_delete')
+                
+                # Second row of links
+                cols2 = st.columns(6) # Use same number of columns for alignment
+                with cols2[0]:
+                    if st.button("Maps", key="detail_maps"):
+                        navigate_to_page('browse_maps')
+                with cols2[1]:
+                    if st.button("Delete Entities", key="detail_delete_entities"):
+                        navigate_to_page('delete_entities')
+
+            else:
+                st.warning(f"Could not find details for map with track number: {track_number}")
+                if st.button("← Back to Browse Maps"):
+                    navigate_to_page('browse_maps')
+
+        else:
+            st.warning("No map selected. Please go back to 'Browse Maps' and click 'Details' on a map.")
+            if st.button("← Browse Maps"):
+                navigate_to_page('browse_maps')
+
+        ui_components.render_content_area_end()
+        ui_components.render_main_container_end()
     
     def show_insert_map(self):
         """

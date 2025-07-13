@@ -89,6 +89,27 @@ class DatabaseManager:
             lambda x: x.str.contains(search_term, case=False, na=False)
         ).any(axis=1)
         return data[mask]
+
+    def get_map_by_track_number(self, track_number):
+        """
+        Get map details by track number
+        """
+        if not PYODBC_AVAILABLE:
+            return pd.DataFrame()
+
+        conn = self.get_connection()
+        if conn is None:
+            return pd.DataFrame()
+
+        try:
+            query = f"SELECT * FROM {self.table_name} WHERE Number = ?"
+            df = pd.read_sql(query, conn, params=[track_number])
+            return df
+        except Exception:
+            return pd.DataFrame()
+        finally:
+            if conn:
+                conn.close()
     
     def insert_map(self, map_data):
         """
