@@ -53,19 +53,19 @@ class DatabaseManager:
         return False
     
     @st.cache
-    def get_beisman_data(_self):
+    def get_beisman_data(self):
         """
         Retrieve all data from the beisman table
         """
         if not PYODBC_AVAILABLE:
             return pd.DataFrame()
         
-        conn = _self.get_connection()
+        conn = self.get_connection()
         if conn is None:
             return pd.DataFrame()
         
         try:
-            query = f"SELECT * FROM {_self.table_name}"
+            query = f"SELECT * FROM {self.table_name}"
             df = pd.read_sql(query, conn)
             return df
         except Exception:
@@ -111,26 +111,34 @@ class DatabaseManager:
             if conn:
                 conn.close()
     
-    def insert_map(self, map_data):
+    def insert_map(self, trace_number, drawer, description):
         """
         Insert new map data into the database
         """
         if not PYODBC_AVAILABLE:
             return False, "Database not available"
-        
+
+        # Check if the tracking number already exists
+        if not self.get_map_by_track_number(trace_number).empty:
+            return False, f"Tracking number {trace_number} already exists in the database."
+
         conn = self.get_connection()
         if conn is None:
             return False, "Database connection failed"
-        
+
         try:
-            # Implementation for insert operation
-            # This is a placeholder - actual implementation depends on table structure
             cursor = conn.cursor()
-            # cursor.execute("INSERT INTO ... VALUES (?)", map_data)
-            # conn.commit()
-            return True, "Map inserted successfully"
+            cursor.execute(f"INSERT INTO {self.table_name} (Number, Drawer, PropertyDetails) VALUES (?, ?, ?)",
+                           (trace_number, drawer, description))
+            conn.commit()
+
+            # Verify the insertion
+            if not self.get_map_by_track_number(trace_number).empty:
+                return True, "Map data inserted successfully."
+            else:
+                return False, "Failed to verify data insertion."
         except Exception as e:
-            return False, f"Error inserting map: {str(e)}"
+            return False, f"Error inserting data: {str(e)}"
         finally:
             if conn:
                 conn.close()

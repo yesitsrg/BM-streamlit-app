@@ -267,7 +267,43 @@ class PageHandlers:
         """
         Show insert map page
         """
-        self.show_placeholder_page("Insert New Map", "Insert New Map")
+        ui_components.render_main_container_start()
+        ui_components.render_window_header("Insert New Map")
+        ui_components.render_content_area_start()
+
+        ui_components.render_back_button(
+            "← Back to Admin Panel",
+            "back_to_admin_insert",
+            lambda: navigate_to_page('admin_panel')
+        )
+
+        st.write("---")
+
+        trace_number = st.text_input("Trace Number:")
+        drawer = st.text_input("Drawer:")
+        description = st.text_area("Description:")
+
+        st.write("---")
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+            if st.button("Insert", key="insert_map_button"):
+                if trace_number and drawer and description:
+                    success, message = db_manager.insert_map(trace_number, drawer, description)
+                    if success:
+                        st.success(message)
+                    else:
+                        st.error(message)
+                else:
+                    st.warning("Please fill in all fields.")
+
+        with col2:
+            if st.button("Cancel", key="cancel_insert_map_button"):
+                navigate_to_page('admin_panel')
+
+        ui_components.render_content_area_end()
+        ui_components.render_main_container_end()
     
     def show_update_delete(self):
         """
