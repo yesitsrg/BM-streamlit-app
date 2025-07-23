@@ -143,7 +143,7 @@ class DatabaseManager:
             if conn:
                 conn.close()
     
-    def update_map(self, map_id, map_data):
+    def update_map(self, old_trace_number, new_trace_number, new_drawer, new_description):
         """
         Update existing map data
         """
@@ -155,19 +155,18 @@ class DatabaseManager:
             return False, "Database connection failed"
         
         try:
-            # Implementation for update operation
-            # This is a placeholder - actual implementation depends on table structure
             cursor = conn.cursor()
-            # cursor.execute("UPDATE ... SET ... WHERE id = ?", (map_data, map_id))
-            # conn.commit()
+            cursor.execute(f"UPDATE {self.table_name} SET Number = ?, Drawer = ?, PropertyDetails = ? WHERE Number = ?",
+                           (new_trace_number, new_drawer, new_description, old_trace_number))
+            conn.commit()
             return True, "Map updated successfully"
         except Exception as e:
             return False, f"Error updating map: {str(e)}"
         finally:
             if conn:
                 conn.close()
-    
-    def delete_map(self, map_id):
+
+    def delete_map(self, track_number):
         """
         Delete map from database
         """
@@ -179,14 +178,82 @@ class DatabaseManager:
             return False, "Database connection failed"
         
         try:
-            # Implementation for delete operation
-            # This is a placeholder - actual implementation depends on table structure
             cursor = conn.cursor()
-            # cursor.execute("DELETE FROM ... WHERE id = ?", (map_id,))
-            # conn.commit()
+            # First, delete associated entities
+            cursor.execute("DELETE FROM BeismanDB.dbo.Entities WHERE BeismanNumber = ?", (track_number,))
+            # Then, delete the map
+            cursor.execute(f"DELETE FROM {self.table_name} WHERE Number = ?", (track_number,))
+            conn.commit()
             return True, "Map deleted successfully"
         except Exception as e:
             return False, f"Error deleting map: {str(e)}"
+        finally:
+            if conn:
+                conn.close()
+
+    def get_entities_for_map(self, track_number):
+        """
+        Get all entities for a given map
+        """
+        if not PYODBC_AVAILABLE:
+            return pd.DataFrame()
+
+        conn = self.get_connection()
+        if conn is None:
+            return pd.DataFrame()
+
+        try:
+            query = "SELECT EntityName FROM BeismanDB.dbo.Entities WHERE BeismanNumber = ?"
+            df = pd.read_sql(query, conn, params=[track_number])
+            return df
+        except Exception:
+            return pd.DataFrame()
+        finally:
+            if conn:
+                conn.close()
+
+    def add_entity_to_map(self, track_number, entity_name):
+        """
+        Add a new entity for a map
+        """
+        if not PYODBC_AVAILABLE:
+            return False, "Database not available"
+
+        conn = self.get_connection()
+        if conn is None:
+            return False, "Database connection failed"
+
+        try:
+            cursor = conn.cursor()
+            cursor.execute("INSERT INTO BeismanDB.dbo.Entities (BeismanNumber, EntityName) VALUES (?, ?)",
+                           (track_number, entity_name))
+            conn.commit()
+            return True, "Entity added successfully."
+        except Exception as e:
+            return False, f"Error adding entity: {str(e)}"
+        finally:
+            if conn:
+                conn.close()
+
+    def remove_entity_from_map(self, track_number, entity_name):
+        """
+        Remove an entity associated with a map
+        """
+        if not PYODBC_AVAILABLE:
+            return False, "Database not available"
+
+        conn = self.get_connection()
+        if conn is None:
+            return False, "Database connection failed"
+
+        try:
+            cursor = conn.cursor()
+            cursor.execute("DELETE FROM Entities WHERE BeismanNumber = ? AND EntityName = ?",
+                           (track_number, entity_name))
+            conn.commit()
+            return True, "Entity removed successfully."
+        except Exception as e:
+            return False, f"Error removing entity: {str(e)}"
         finally:
             if conn:
                 conn.close()

@@ -309,7 +309,90 @@ class PageHandlers:
         """
         Show update/delete maps page
         """
-        self.show_placeholder_page("Update/Delete Maps", "Update/Delete Maps")
+        ui_components.render_main_container_start()
+        ui_components.render_window_header("Update/Delete Map")
+        ui_components.render_content_area_start()
+
+        ui_components.render_back_button(
+            "← Back to Admin Panel",
+            "back_to_admin_update",
+            lambda: navigate_to_page('admin_panel')
+        )
+
+        st.write("---")
+
+        if 'selected_track_number' in st.session_state:
+            track_number = st.session_state.selected_track_number
+            map_details_df = db_manager.get_map_by_track_number(track_number)
+
+            if map_details_df is not None and not map_details_df.empty:
+                map_details = map_details_df.iloc[0]
+
+                # Display current map details in editable fields
+                st.subheader("Update Map Details")
+                new_trace_number = st.text_input("Trace Number:", value=map_details.get('Number', ''))
+                new_drawer = st.text_input("Drawer:", value=map_details.get('Drawer', ''))
+                new_description = st.text_area("Description:", value=map_details.get('PropertyDetails', ''))
+
+                st.write("---")
+
+                # Manage Entities
+                st.subheader("Manage Entities")
+                entities_df = db_manager.get_entities_for_map(track_number)
+                
+                if entities_df is not None and not entities_df.empty:
+                    st.write("Entities associated with this map:")
+                    for index, entity in entities_df.iterrows():
+                        col1, col2 = st.columns([4, 1])
+                        col1.write(entity['EntityName'])
+                        if col2.button(f"Remove {entity['EntityName']}", key=f"remove_entity_{entity['EntityName']}"):
+                            db_manager.remove_entity_from_map(track_number, entity['EntityName'])
+                            st.experimental_rerun()
+                else:
+                    st.write("No entities associated with this map.")
+
+                # Add new entity
+                new_entity_name = st.text_input("Add new entity:", key="new_entity_name")
+                if st.button("Add Entity"):
+                    if new_entity_name:
+                        success, message = db_manager.add_entity_to_map(track_number, new_entity_name)
+                        if success:
+                            st.success(message)                            
+                            st.experimental_rerun()
+                        else:
+                            st.error(message)
+
+                st.write("---")
+
+                # Update and Delete buttons
+                col1, col2 = st.columns(2)
+                with col1:
+                    if st.button("Update Map", key="update_map_button"):
+                        success, message = db_manager.update_map(track_number, new_trace_number, new_drawer, new_description)
+                        if success:
+                            st.success(message)
+                            if track_number != new_trace_number:
+                                st.session_state.selected_track_number = new_trace_number
+                                st.experimental_rerun()
+                        else:
+                            st.error(message)
+                with col2:
+                    with st.expander("Delete Map", expanded=False):
+                        st.warning("This action is permanent. It will delete the map and all associated entities.")
+                        if st.button("Confirm Permanent Deletion", key="confirm_delete_map_button"):
+                            success, message = db_manager.delete_map(track_number)
+                            if success:
+                                st.success(message)
+                                navigate_to_page('admin_panel')
+                            else:
+                                st.error(message)
+            else:
+                st.warning("Could not find map details.")
+        else:
+            st.warning("No map selected.")
+
+        ui_components.render_content_area_end()
+        ui_components.render_main_container_end()
     
     def show_delete_entities(self):
         """
