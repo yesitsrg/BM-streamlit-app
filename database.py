@@ -52,24 +52,50 @@ class DatabaseManager:
             return True
         return False
     
-    @st.cache
-    def get_beisman_data(_self):
+    def get_beisman_data(self, limit=None, offset=0):
         """
-        Retrieve all data from the beisman table
+        Retrieve all data from the beisman table with optional pagination
         """
         if not PYODBC_AVAILABLE:
             return pd.DataFrame()
         
-        conn = _self.get_connection()
+        conn = self.get_connection()
         if conn is None:
             return pd.DataFrame()
         
         try:
-            query = f"SELECT * FROM {_self.table_name}"
-            df = pd.read_sql(query, conn)
+            query = f"SELECT * FROM {self.table_name} ORDER BY Number OFFSET ? ROWS"
+            params = [offset]
+            
+            if limit is not None:
+                query += " FETCH NEXT ? ROWS ONLY"
+                params.append(limit)
+            
+            df = pd.read_sql(query, conn, params=params)
             return df
         except Exception:
             return pd.DataFrame()
+        finally:
+            if conn:
+                conn.close()
+
+    def get_beisman_data_count(self):
+        """
+        Get the total number of records in the beisman table
+        """
+        if not PYODBC_AVAILABLE:
+            return 0
+        
+        conn = self.get_connection()
+        if conn is None:
+            return 0
+        
+        try:
+            query = f"SELECT COUNT(*) FROM {self.table_name}"
+            df = pd.read_sql(query, conn)
+            return df.iloc[0, 0]
+        except Exception:
+            return 0
         finally:
             if conn:
                 conn.close()
@@ -89,32 +115,133 @@ class DatabaseManager:
             lambda x: x.str.contains(search_term, case=False, na=False)
         ).any(axis=1)
         return data[mask]
+
+    def get_all_entities(self, limit=None, offset=0):
+        """
+        Get all entities from the database with optional pagination
+        """
+        if not PYODBC_AVAILABLE:
+            return pd.DataFrame()
+
+        conn = self.get_connection()
+        if conn is None:
+            return pd.DataFrame()
+
+        try:
+            query = "SELECT * FROM BeismanDB.dbo.Entities ORDER BY EntityName OFFSET ? ROWS"
+            params = [offset]
+            
+            if limit is not None:
+                query += " FETCH NEXT ? ROWS ONLY"
+                params.append(limit)
+                
+            df = pd.read_sql(query, conn, params=params)
+            return df
+        except Exception:
+            return pd.DataFrame()
+        finally:
+            if conn:
+                conn.close()
+
+    def get_entities_count(self):
+        """
+        Get the total number of entities in the database
+        """
+        if not PYODBC_AVAILABLE:
+            return 0
+
+        conn = self.get_connection()
+        if conn is None:
+            return 0
+
+        try:
+            query = "SELECT COUNT(*) FROM BeismanDB.dbo.Entities"
+            df = pd.read_sql(query, conn)
+            return df.iloc[0, 0]
+        except Exception:
+            return 0
+        finally:
+            if conn:
+                conn.close()
+
+    def search_entities(self, search_term):
+        """
+        Search for entities based on entity name
+        """
+        if not search_term or not search_term.strip():
+            return self.get_all_entities()
+
+        if not PYODBC_AVAILABLE:
+            return pd.DataFrame()
+
+        conn = self.get_connection()
+        if conn is None:
+            return pd.DataFrame()
+
+        try:
+            query = "SELECT * FROM BeismanDB.dbo.Entities WHERE EntityName LIKE ?"
+            df = pd.read_sql(query, conn, params=[f'%{search_term}%'])
+            return df
+        except Exception:
+            return pd.DataFrame()
+        finally:
+            if conn:
+                conn.close()
+
+    def get_map_by_track_number(self, track_number):
+        """
+        Get map details by track number
+        """
+        if not PYODBC_AVAILABLE:
+            return pd.DataFrame()
+
+        conn = self.get_connection()
+        if conn is None:
+            return pd.DataFrame()
+
+        try:
+            query = f"SELECT * FROM {self.table_name} WHERE Number = ?"
+            df = pd.read_sql(query, conn, params=[track_number])
+            return df
+        except Exception:
+            return pd.DataFrame()
+        finally:
+            if conn:
+                conn.close()
     
-    def insert_map(self, map_data):
+    def insert_map(self, trace_number, drawer, description):
         """
         Insert new map data into the database
         """
         if not PYODBC_AVAILABLE:
             return False, "Database not available"
-        
+
+        # Check if the tracking number already exists
+        if not self.get_map_by_track_number(trace_number).empty:
+            return False, f"Tracking number {trace_number} already exists in the database."
+
         conn = self.get_connection()
         if conn is None:
             return False, "Database connection failed"
-        
+
         try:
-            # Implementation for insert operation
-            # This is a placeholder - actual implementation depends on table structure
             cursor = conn.cursor()
-            # cursor.execute("INSERT INTO ... VALUES (?)", map_data)
-            # conn.commit()
-            return True, "Map inserted successfully"
+            cursor.execute(f"INSERT INTO {self.table_name} (Number, Drawer, PropertyDetails) VALUES (?, ?, ?)",
+                           (trace_number, drawer, description))
+            conn.commit()
+
+            # Verify the insertion
+            if not self.get_map_by_track_number(trace_number).empty:
+                return True, "Map data inserted successfully."
+            else:
+                return False, "Failed to verify data insertion."
         except Exception as e:
-            return False, f"Error inserting map: {str(e)}"
+            return False, f"Error inserting data: {str(e)}"
         finally:
             if conn:
                 conn.close()
     
-    def update_map(self, map_id, map_data):
+    def update_map(self, old_trace_number, new_trace_number, new_drawer, new_description):
         """
         Update existing map data
         """
@@ -126,19 +253,18 @@ class DatabaseManager:
             return False, "Database connection failed"
         
         try:
-            # Implementation for update operation
-            # This is a placeholder - actual implementation depends on table structure
             cursor = conn.cursor()
-            # cursor.execute("UPDATE ... SET ... WHERE id = ?", (map_data, map_id))
-            # conn.commit()
+            cursor.execute(f"UPDATE {self.table_name} SET Number = ?, Drawer = ?, PropertyDetails = ? WHERE Number = ?",
+                           (new_trace_number, new_drawer, new_description, old_trace_number))
+            conn.commit()
             return True, "Map updated successfully"
         except Exception as e:
             return False, f"Error updating map: {str(e)}"
         finally:
             if conn:
                 conn.close()
-    
-    def delete_map(self, map_id):
+
+    def delete_map(self, track_number):
         """
         Delete map from database
         """
@@ -150,14 +276,82 @@ class DatabaseManager:
             return False, "Database connection failed"
         
         try:
-            # Implementation for delete operation
-            # This is a placeholder - actual implementation depends on table structure
             cursor = conn.cursor()
-            # cursor.execute("DELETE FROM ... WHERE id = ?", (map_id,))
-            # conn.commit()
+            # First, delete associated entities
+            cursor.execute("DELETE FROM BeismanDB.dbo.Entities WHERE BeismanNumber = ?", (track_number,))
+            # Then, delete the map
+            cursor.execute(f"DELETE FROM {self.table_name} WHERE Number = ?", (track_number,))
+            conn.commit()
             return True, "Map deleted successfully"
         except Exception as e:
             return False, f"Error deleting map: {str(e)}"
+        finally:
+            if conn:
+                conn.close()
+
+    def get_entities_for_map(self, track_number):
+        """
+        Get all entities for a given map
+        """
+        if not PYODBC_AVAILABLE:
+            return pd.DataFrame()
+
+        conn = self.get_connection()
+        if conn is None:
+            return pd.DataFrame()
+
+        try:
+            query = "SELECT EntityName FROM BeismanDB.dbo.Entities WHERE BeismanNumber = ?"
+            df = pd.read_sql(query, conn, params=[track_number])
+            return df
+        except Exception:
+            return pd.DataFrame()
+        finally:
+            if conn:
+                conn.close()
+
+    def add_entity_to_map(self, track_number, entity_name):
+        """
+        Add a new entity for a map
+        """
+        if not PYODBC_AVAILABLE:
+            return False, "Database not available"
+
+        conn = self.get_connection()
+        if conn is None:
+            return False, "Database connection failed"
+
+        try:
+            cursor = conn.cursor()
+            cursor.execute("INSERT INTO BeismanDB.dbo.Entities (BeismanNumber, EntityName) VALUES (?, ?)",
+                           (track_number, entity_name))
+            conn.commit()
+            return True, "Entity added successfully."
+        except Exception as e:
+            return False, f"Error adding entity: {str(e)}"
+        finally:
+            if conn:
+                conn.close()
+
+    def remove_entity_from_map(self, track_number, entity_name):
+        """
+        Remove an entity associated with a map
+        """
+        if not PYODBC_AVAILABLE:
+            return False, "Database not available"
+
+        conn = self.get_connection()
+        if conn is None:
+            return False, "Database connection failed"
+
+        try:
+            cursor = conn.cursor()
+            cursor.execute("DELETE FROM Entities WHERE BeismanNumber = ? AND EntityName = ?",
+                           (track_number, entity_name))
+            conn.commit()
+            return True, "Entity removed successfully."
+        except Exception as e:
+            return False, f"Error removing entity: {str(e)}"
         finally:
             if conn:
                 conn.close()

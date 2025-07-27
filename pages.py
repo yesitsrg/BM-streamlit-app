@@ -102,10 +102,6 @@ class PageHandlers:
             navigate_to_page('browse_entities')
         elif buttons_clicked['insert_map']:
             navigate_to_page('insert_map')
-        elif buttons_clicked['update_delete']:
-            navigate_to_page('update_delete')
-        elif buttons_clicked['delete_entities']:
-            navigate_to_page('delete_entities')
         
         ui_components.render_admin_session_info()
         ui_components.render_content_area_end()
@@ -113,80 +109,422 @@ class PageHandlers:
     
     def show_browse_maps(self):
         """
-        Show browse maps page
+        Show browse maps page with pagination
         """
         ui_components.render_main_container_start()
         ui_components.render_window_header("Browse Beisman Maps")
         ui_components.render_content_area_start()
-        
+
         # Back button
         ui_components.render_back_button(
             "← Back to Admin Panel",
             "back_to_admin",
             lambda: navigate_to_page('admin_panel')
         )
-        
+
+        # Initialize session state for pagination
+        if 'page_number' not in st.session_state:
+            st.session_state.page_number = 0
+        if 'page_size' not in st.session_state:
+            st.session_state.page_size = 10
+
         # Database connection status
         if db_manager.is_available():
-            if db_manager.test_connection():
-                ui_components.render_status_message("success", "Database connection successful", "✅")
-            else:
+            if not db_manager.test_connection():
                 ui_components.render_status_message("error", "Database connection failed - using offline mode", "❌")
         else:
             ui_components.render_status_message("error", "pyodbc module is not installed. Please install it using: pip install pyodbc", "⚠️")
-        
+
         # Search section
-        search_term, search_button, reset_button = ui_components.render_search_container()
-        
+        search_term, search_button, reset_button = ui_components.render_search_container("maps_search")
+
         # Handle search and data retrieval
         if reset_button:
             reset_search_input()
-            filtered_data = db_manager.get_beisman_data()
+            st.session_state.page_number = 0
             rerun_app()
-        elif search_button or search_term:
-            filtered_data = db_manager.search_maps(search_term)
+
+        if search_button or search_term:
+            all_data = db_manager.search_maps(search_term)
+            total_records = len(all_data)
         else:
-            filtered_data = db_manager.get_beisman_data()
-        
+            total_records = db_manager.get_beisman_data_count()
+
+        # Pagination controls
+        page_size = st.selectbox("Records per page:", [10, 25, 50], index=[10, 25, 50].index(st.session_state.page_size))
+        if page_size != st.session_state.page_size:
+            st.session_state.page_size = page_size
+            st.session_state.page_number = 0
+            rerun_app()
+
+        total_pages = (total_records // st.session_state.page_size) + (1 if total_records % st.session_state.page_size > 0 else 0)
+        offset = st.session_state.page_number * st.session_state.page_size
+
+        if search_button or search_term:
+            filtered_data = all_data.iloc[offset : offset + st.session_state.page_size]
+        else:
+            filtered_data = db_manager.get_beisman_data(limit=st.session_state.page_size, offset=offset)
+
         # Results section
         ui_components.render_results_container_start()
-        
+
         if filtered_data is not None and not filtered_data.empty:
-            table_html = ui_components.render_data_table(filtered_data)
-            st.markdown(table_html, unsafe_allow_html=True)
+            col_map = {"Details": 1, "Number": 2, "Drawer": 2, "PropertyDetails": 4}
+            cols = st.columns(list(col_map.values()))
+            for i, col_name in enumerate(col_map.keys()):
+                cols[i].write(f"**{col_name}**")
+
+            for index, row in filtered_data.iterrows():
+                cols = st.columns(list(col_map.values()))
+                if cols[0].button("Details", key=f"details_{row['Number']}"):
+                    st.session_state.selected_track_number = row['Number']
+                    navigate_to_page('map_details')
+                    rerun_app()
+                
+                cols[1].write(row['Number'])
+                cols[2].write(row['Drawer'])
+                cols[3].write(row['PropertyDetails'])
+
+            st.markdown("<hr>", unsafe_allow_html=True)
             
-            record_count = len(filtered_data)
-            if search_term:
-                ui_components.render_status_message("info", f"Found {record_count} record(s) matching '{search_term}'", "🔍")
-            else:
-                ui_components.render_status_message("info", f"Displaying {record_count} total record(s)", "📊")
+            # Pagination navigation
+            col1, col2, col3 = st.columns([1, 2, 1])
+            with col1:
+                if st.button("⬅️ Previous", disabled=bool(st.session_state.page_number == 0)):
+                    st.session_state.page_number -= 1
+                    rerun_app()
+            with col2:
+                st.write(f"Page {st.session_state.page_number + 1} of {total_pages}")
+                st.write(f"Displaying records {offset + 1} - {offset + len(filtered_data)} of {total_records}")
+            with col3:
+                if st.button("Next ➡️", disabled=bool(st.session_state.page_number >= total_pages - 1)):
+                    st.session_state.page_number += 1
+                    rerun_app()
         else:
             if search_term:
                 ui_components.render_status_message("warning", "No records found matching your search criteria.", "🔍")
             else:
                 ui_components.render_status_message("warning", "No data available in the database.", "📭")
-        
+
         ui_components.render_results_container_end()
         ui_components.render_content_area_end()
         ui_components.render_main_container_end()
     
     def show_browse_entities(self):
         """
-        Show browse entities page
+        Show browse entities page with pagination
         """
-        self.show_placeholder_page("Browse Entities", "Browse Entities")
+        ui_components.render_main_container_start()
+        ui_components.render_window_header("Browse Beisman Entities")
+        ui_components.render_content_area_start()
+
+        # Back button
+        ui_components.render_back_button(
+            "← Back to Admin Panel",
+            "back_to_admin",
+            lambda: navigate_to_page('admin_panel')
+        )
+
+        # Initialize session state for pagination
+        if 'entity_page_number' not in st.session_state:
+            st.session_state.entity_page_number = 0
+        if 'entity_page_size' not in st.session_state:
+            st.session_state.entity_page_size = 10
+
+        # Database connection status
+        if db_manager.is_available():
+            if not db_manager.test_connection():
+                ui_components.render_status_message("error", "Database connection failed - using offline mode", "❌")
+        else:
+            ui_components.render_status_message("error", "pyodbc module is not installed. Please install it using: pip install pyodbc", "⚠️")
+
+        # Search section
+        search_term, search_button, reset_button = ui_components.render_search_container("entity_search")
+
+        # Handle search and data retrieval
+        if reset_button:
+            reset_search_input("entity_search")
+            st.session_state.entity_page_number = 0
+            rerun_app()
+
+        if search_button or search_term:
+            all_data = db_manager.search_entities(search_term)
+            total_records = len(all_data)
+        else:
+            total_records = db_manager.get_entities_count()
+
+        # Pagination controls
+        page_size = st.selectbox("Records per page:", [10, 25, 50], index=[10, 25, 50].index(st.session_state.entity_page_size), key="entity_page_size_selectbox")
+        if page_size != st.session_state.entity_page_size:
+            st.session_state.entity_page_size = page_size
+            st.session_state.entity_page_number = 0
+            rerun_app()
+
+        total_pages = (total_records // st.session_state.entity_page_size) + (1 if total_records % st.session_state.entity_page_size > 0 else 0)
+        offset = st.session_state.entity_page_number * st.session_state.entity_page_size
+
+        if search_button or search_term:
+            filtered_data = all_data.iloc[offset : offset + st.session_state.entity_page_size]
+        else:
+            filtered_data = db_manager.get_all_entities(limit=st.session_state.entity_page_size, offset=offset)
+
+        # Results section
+        ui_components.render_results_container_start()
+
+        if filtered_data is not None and not filtered_data.empty:
+            col_map = {"Details": 1, "Entity Name": 4, "Map Number": 2}
+            cols = st.columns(list(col_map.values()))
+            for i, col_name in enumerate(col_map.keys()):
+                cols[i].write(f"**{col_name}**")
+
+            for index, row in filtered_data.iterrows():
+                cols = st.columns(list(col_map.values()))
+                if cols[0].button("Details", key=f"details_{row['EntityName']}_{row['BeismanNumber']}"):
+                    st.session_state.selected_track_number = row['BeismanNumber']
+                    navigate_to_page('map_details')
+                    rerun_app()
+                
+                cols[1].write(row['EntityName'])
+                cols[2].write(row['BeismanNumber'])
+
+            st.markdown("<hr>", unsafe_allow_html=True)
+            
+            # Pagination navigation
+            col1, col2, col3 = st.columns([1, 2, 1])
+            with col1:
+                if st.button("⬅️ Previous", disabled=bool(st.session_state.entity_page_number == 0)):
+                    st.session_state.entity_page_number -= 1
+                    rerun_app()
+            with col2:
+                st.write(f"Page {st.session_state.entity_page_number + 1} of {total_pages}")
+                st.write(f"Displaying records {offset + 1} - {offset + len(filtered_data)} of {total_records}")
+            with col3:
+                if st.button("Next ➡️", disabled=bool(st.session_state.entity_page_number >= total_pages - 1)):
+                    st.session_state.entity_page_number += 1
+                    rerun_app()
+        else:
+            if search_term:
+                ui_components.render_status_message("warning", "No records found matching your search criteria.", "🔍")
+            else:
+                ui_components.render_status_message("warning", "No data available in the database.", "📭")
+
+        ui_components.render_results_container_end()
+        ui_components.render_content_area_end()
+        ui_components.render_main_container_end()
+    
+    def show_map_details(self):
+        """
+        Show map details page
+        """
+        ui_components.render_main_container_start()
+        ui_components.render_window_header("Map Information")
+        ui_components.render_content_area_start()
+
+        if 'selected_track_number' in st.session_state:
+            track_number = st.session_state.selected_track_number
+            map_details_df = db_manager.get_map_by_track_number(track_number)
+
+            if map_details_df is not None and not map_details_df.empty:
+                map_details = map_details_df.iloc[0]
+                
+                st.markdown("---")
+                
+                col1, col2 = st.columns([1, 3])
+                with col1:
+                    st.write("Trace Number")
+                    st.write("Drawer")
+                    st.write("Description")
+                with col2:
+                    st.write(f"{map_details.get('Number', 'N/A')}")
+                    st.write(f"{map_details.get('Drawer', 'N/A')}")
+                    st.write(f"{map_details.get('PropertyDetails', 'N/A')}")
+
+                st.markdown("---")
+
+                entities_df = db_manager.get_entities_for_map(track_number)
+                if entities_df is not None and not entities_df.empty:
+                    st.write("**Associated Entities:**")
+                    for index, entity in entities_df.iterrows():
+                        st.write(entity['EntityName'])
+                else:
+                    st.info("No clients associated with this map.")
+                
+                st.markdown("---")
+
+                # Bottom navigation links
+                cols = st.columns(6)
+                with cols[0]:
+                    if st.button("Home", key="detail_home"):
+                        navigate_to_page('home')
+                with cols[1]:
+                    if st.button("Back", key="detail_back"):
+                        navigate_to_page(-1) # Go back to the previous page
+                with cols[2]:
+                    if st.button("Browse Maps", key="detail_browse_maps"):
+                        navigate_to_page('browse_maps')
+                with cols[3]:
+                    if st.button("Browse Entities", key="detail_browse_entities"):
+                        navigate_to_page('browse_entities')
+                with cols[4]:
+                    if st.button("Insert Map", key="detail_insert_map"):
+                        navigate_to_page('insert_map')
+                with cols[5]:
+                    if st.button("Update/Delete", key="detail_update_delete"):
+                        st.session_state.selected_track_number = track_number
+                        navigate_to_page('update_delete')
+                
+                # Second row of links
+                cols2 = st.columns(6) # Use same number of columns for alignment
+                with cols2[0]:
+                    if st.button("Maps", key="detail_maps"):
+                        navigate_to_page('browse_maps')
+                with cols2[1]:
+                    if st.button("Delete Entities", key="detail_delete_entities"):
+                        navigate_to_page('delete_entities')
+
+            else:
+                st.warning(f"Could not find details for map with track number: {track_number}")
+                if st.button("← Back to Browse Maps"):
+                    navigate_to_page('browse_maps')
+
+        else:
+            st.warning("No map selected. Please go back to 'Browse Maps' and click 'Details' on a map.")
+            if st.button("← Browse Maps"):
+                navigate_to_page('browse_maps')
+
+        ui_components.render_content_area_end()
+        ui_components.render_main_container_end()
     
     def show_insert_map(self):
         """
         Show insert map page
         """
-        self.show_placeholder_page("Insert New Map", "Insert New Map")
+        ui_components.render_main_container_start()
+        ui_components.render_window_header("Insert New Map")
+        ui_components.render_content_area_start()
+
+        ui_components.render_back_button(
+            "← Back to Admin Panel",
+            "back_to_admin_insert",
+            lambda: navigate_to_page('admin_panel')
+        )
+
+        st.write("---")
+
+        trace_number = st.text_input("Trace Number:")
+        drawer = st.text_input("Drawer:")
+        description = st.text_area("Description:")
+
+        st.write("---")
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+            if st.button("Insert", key="insert_map_button"):
+                if trace_number and drawer and description:
+                    success, message = db_manager.insert_map(trace_number, drawer, description)
+                    if success:
+                        st.success(message)
+                    else:
+                        st.error(message)
+                else:
+                    st.warning("Please fill in all fields.")
+
+        with col2:
+            if st.button("Cancel", key="cancel_insert_map_button"):
+                navigate_to_page('admin_panel')
+
+        ui_components.render_content_area_end()
+        ui_components.render_main_container_end()
     
     def show_update_delete(self):
         """
         Show update/delete maps page
         """
-        self.show_placeholder_page("Update/Delete Maps", "Update/Delete Maps")
+        ui_components.render_main_container_start()
+        ui_components.render_window_header("Update/Delete Map")
+        ui_components.render_content_area_start()
+
+        ui_components.render_back_button(
+            "← Back to Admin Panel",
+            "back_to_admin_update",
+            lambda: navigate_to_page('admin_panel')
+        )
+
+        st.write("---")
+
+        if 'selected_track_number' in st.session_state:
+            track_number = st.session_state.selected_track_number
+            map_details_df = db_manager.get_map_by_track_number(track_number)
+
+            if map_details_df is not None and not map_details_df.empty:
+                map_details = map_details_df.iloc[0]
+
+                # Display current map details in editable fields
+                st.subheader("Update Map Details")
+                new_trace_number = st.text_input("Trace Number:", value=map_details.get('Number', ''))
+                new_drawer = st.text_input("Drawer:", value=map_details.get('Drawer', ''))
+                new_description = st.text_area("Description:", value=map_details.get('PropertyDetails', ''))
+
+                st.write("---")
+
+                # Manage Entities
+                st.subheader("Manage Entities")
+                entities_df = db_manager.get_entities_for_map(track_number)
+                
+                if entities_df is not None and not entities_df.empty:
+                    st.write("Entities associated with this map:")
+                    for index, entity in entities_df.iterrows():
+                        col1, col2 = st.columns([4, 1])
+                        col1.write(entity['EntityName'])
+                        if col2.button(f"Remove {entity['EntityName']}", key=f"remove_entity_{entity['EntityName']}"):
+                            db_manager.remove_entity_from_map(track_number, entity['EntityName'])
+                            st.rerun()
+                else:
+                    st.write("No entities associated with this map.")
+
+                # Add new entity
+                new_entity_name = st.text_input("Add new entity:", key="new_entity_name")
+                if st.button("Add Entity"):
+                    if new_entity_name:
+                        success, message = db_manager.add_entity_to_map(track_number, new_entity_name)
+                        if success:
+                            st.success(message)                            
+                            st.rerun()
+                        else:
+                            st.error(message)
+
+                st.write("---")
+
+                # Update and Delete buttons
+                col1, col2 = st.columns(2)
+                with col1:
+                    if st.button("Update Map", key="update_map_button"):
+                        success, message = db_manager.update_map(track_number, new_trace_number, new_drawer, new_description)
+                        if success:
+                            st.success(message)
+                            if track_number != new_trace_number:
+                                st.session_state.selected_track_number = new_trace_number
+                                st.rerun()
+                        else:
+                            st.error(message)
+                with col2:
+                    with st.expander("Delete Map", expanded=False):
+                        st.warning("This action is permanent. It will delete the map and all associated entities.")
+                        if st.button("Confirm Permanent Deletion", key="confirm_delete_map_button"):
+                            success, message = db_manager.delete_map(track_number)
+                            if success:
+                                st.success(message)
+                                navigate_to_page('admin_panel')
+                            else:
+                                st.error(message)
+            else:
+                st.warning("Could not find map details.")
+        else:
+            st.warning("No map selected.")
+
+        ui_components.render_content_area_end()
+        ui_components.render_main_container_end()
     
     def show_delete_entities(self):
         """

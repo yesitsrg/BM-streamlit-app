@@ -107,22 +107,22 @@ class UIComponents:
             st.markdown(f'<div class="login-error">{error_message}</div>', unsafe_allow_html=True)
     
     @staticmethod
-    def render_search_container():
+    def render_search_container(key_prefix=""):
         """
         Render search container
         """
-        st.markdown('<div class="search-container">', unsafe_allow_html=True)
+        #st.markdown('<div class="search-container">', unsafe_allow_html=True)
         
         col1, col2, col3 = st.columns([6, 1.5, 1.5])
         
         with col1:
-            search_term = st.text_input("Search:", placeholder="Enter search term...", key="search_input")
+            search_term = st.text_input("Search:", placeholder="Enter search term...", key=f"{key_prefix}_search_input")
         
         with col2:
-            search_button = st.button("Search")
+            search_button = st.button("Search", key=f"{key_prefix}_search_button")
         
         with col3:
-            reset_button = st.button("Reset")
+            reset_button = st.button("Reset", key=f"{key_prefix}_reset_button")
         
         st.markdown('</div>', unsafe_allow_html=True)
         
@@ -199,7 +199,7 @@ class UIComponents:
         """
         Render admin navigation buttons
         """
-        col1, col2, col3 = st.columns(3)
+        col1, col2 = st.columns(2)
         
         buttons_clicked = {}
         
@@ -209,10 +209,6 @@ class UIComponents:
         
         with col2:
             buttons_clicked['browse_entities'] = st.button("Browse Entities", key="nav_browse_entities")
-            buttons_clicked['update_delete'] = st.button("Update/Delete Maps", key="nav_update")
-        
-        with col3:
-            buttons_clicked['delete_entities'] = st.button("Delete Entities", key="nav_delete")
         
         return buttons_clicked
     
