@@ -10,18 +10,7 @@ def fix_streamlit_compatibility():
     Fix Streamlit compatibility issues for older versions
     """
     
-    # Fix 1: st.cache_data (added in Streamlit 1.18.0)
-    if not hasattr(st, 'cache_data'):
-        print("Warning: st.cache_data not found, using st.cache fallback")
-        st.cache_data = st.cache
     
-    # Fix 2: st.cache_resource (added in Streamlit 1.18.0) 
-    if not hasattr(st, 'cache_resource'):
-        print("Warning: st.cache_resource not found, using st.cache fallback")
-        def cache_resource_fallback(**kwargs):
-            kwargs['allow_output_mutation'] = True
-            return st.cache(**kwargs)
-        st.cache_resource = cache_resource_fallback
     
     # Fix 3: st.session_state (added in Streamlit 0.84.0)
     if not hasattr(st, 'session_state'):

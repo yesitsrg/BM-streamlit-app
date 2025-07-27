@@ -42,6 +42,8 @@ class AppRouter:
                 self.page_handlers.show_update_delete()
             elif current_page == 'delete_entities' and admin_logged_in:
                 self.page_handlers.show_delete_entities()
+            elif current_page == 'map_details' and admin_logged_in:
+                self.page_handlers.show_map_details()
             else:
                 # Default to main screen
                 self.page_handlers.show_main_screen()
@@ -54,31 +56,3 @@ class AppRouter:
 # Create a global instance
 app_router = AppRouter()
 
-# Streamlit compatibility fixes
-def fix_streamlit_cache():
-    """
-    Fix for st.cache_data compatibility issues
-    """
-    # For older Streamlit versions, use st.cache instead of st.cache_data
-    if not hasattr(st, 'cache_data'):
-        st.cache_data = st.cache
-    
-    # For session state compatibility
-    if 'session_state' not in dir(st):
-        class SessionState:
-            def __init__(self):
-                self._state = {}
-            
-            def __getattr__(self, name):
-                return self._state.get(name, None)
-            
-            def __setattr__(self, name, value):
-                if name.startswith('_'):
-                    super().__setattr__(name, value)
-                else:
-                    self._state[name] = value
-        
-        st.session_state = SessionState()
-
-# Call the fix function
-fix_streamlit_cache()
