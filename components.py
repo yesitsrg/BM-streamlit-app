@@ -5,7 +5,7 @@ UI components module for Beisman Maps Management System
 
 import streamlit as st
 import pandas as pd
-from utils import format_cell_value
+from utils import format_cell_value, navigate_to_page
 
 class UIComponents:
     """
@@ -68,12 +68,17 @@ class UIComponents:
         Render navigation links
         """
         st.markdown('<div class="nav-container">', unsafe_allow_html=True)
-        st.markdown("""
-        <div class="nav-links">
-            <a href="#" class="nav-link">Browse Maps</a>
-            <a href="#" class="nav-link">Browse Entities</a>
-        </div>
-        """, unsafe_allow_html=True)
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            if st.button("Browse Maps", key="nav_browse_maps_main"):
+                navigate_to_page('browse_maps')
+        
+        with col2:
+            if st.button("Browse Entities", key="nav_browse_entities_main"):
+                navigate_to_page('browse_entities')
+        
         st.markdown('</div>', unsafe_allow_html=True)
     
     @staticmethod

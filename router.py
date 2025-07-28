@@ -29,21 +29,20 @@ class AppRouter:
                 self.page_handlers.show_admin_login_screen()
                 return
             
-            # Admin-only pages
-            if current_page == 'admin_panel' and admin_logged_in:
-                self.page_handlers.show_admin_panel()
-            elif current_page == 'browse_maps' and admin_logged_in:
+            if current_page == 'browse_maps':
                 self.page_handlers.show_browse_maps()
-            elif current_page == 'browse_entities' and admin_logged_in:
+            elif current_page == 'browse_entities':
                 self.page_handlers.show_browse_entities()
+            elif current_page == 'map_details':
+                self.page_handlers.show_map_details()
+            elif current_page == 'admin_panel' and admin_logged_in:
+                self.page_handlers.show_admin_panel()
             elif current_page == 'insert_map' and admin_logged_in:
                 self.page_handlers.show_insert_map()
             elif current_page == 'update_delete' and admin_logged_in:
                 self.page_handlers.show_update_delete()
             elif current_page == 'delete_entities' and admin_logged_in:
                 self.page_handlers.show_delete_entities()
-            elif current_page == 'map_details' and admin_logged_in:
-                self.page_handlers.show_map_details()
             else:
                 # Default to main screen
                 self.page_handlers.show_main_screen()

@@ -22,11 +22,12 @@ class PageHandlers:
         ui_components.render_window_header("Beisman Map Menu")
         
         # Admin login button
-        ui_components.render_admin_button_container(
-            "Admin Login", 
-            "admin_login_header", 
-            show_admin_login_form
-        )
+        if not auth_manager.is_admin_logged_in():
+            ui_components.render_admin_button_container(
+                "Admin Login", 
+                "admin_login_header", 
+                show_admin_login_form
+            )
         
         ui_components.render_content_area_start()
         ui_components.render_nav_links()
@@ -116,11 +117,18 @@ class PageHandlers:
         ui_components.render_content_area_start()
 
         # Back button
-        ui_components.render_back_button(
-            "← Back to Admin Panel",
-            "back_to_admin",
-            lambda: navigate_to_page('admin_panel')
-        )
+        if auth_manager.is_admin_logged_in():
+            ui_components.render_back_button(
+                "← Back to Admin Panel",
+                "back_to_admin",
+                lambda: navigate_to_page('admin_panel')
+            )
+        else:
+            ui_components.render_back_button(
+                "← Back to Main Menu",
+                "back_to_main",
+                lambda: navigate_to_page('home')
+            )
 
         # Initialize session state for pagination
         if 'page_number' not in st.session_state:
@@ -219,11 +227,18 @@ class PageHandlers:
         ui_components.render_content_area_start()
 
         # Back button
-        ui_components.render_back_button(
-            "← Back to Admin Panel",
-            "back_to_admin",
-            lambda: navigate_to_page('admin_panel')
-        )
+        if auth_manager.is_admin_logged_in():
+            ui_components.render_back_button(
+                "← Back to Admin Panel",
+                "back_to_admin",
+                lambda: navigate_to_page('admin_panel')
+            )
+        else:
+            ui_components.render_back_button(
+                "← Back to Main Menu",
+                "back_to_main",
+                lambda: navigate_to_page('home')
+            )
 
         # Initialize session state for pagination
         if 'entity_page_number' not in st.session_state:
@@ -352,35 +367,48 @@ class PageHandlers:
                 st.markdown("---")
 
                 # Bottom navigation links
-                cols = st.columns(6)
-                with cols[0]:
-                    if st.button("Home", key="detail_home"):
-                        navigate_to_page('home')
-                with cols[1]:
-                    if st.button("Back", key="detail_back"):
-                        navigate_to_page(-1) # Go back to the previous page
-                with cols[2]:
-                    if st.button("Browse Maps", key="detail_browse_maps"):
-                        navigate_to_page('browse_maps')
-                with cols[3]:
-                    if st.button("Browse Entities", key="detail_browse_entities"):
-                        navigate_to_page('browse_entities')
-                with cols[4]:
-                    if st.button("Insert Map", key="detail_insert_map"):
-                        navigate_to_page('insert_map')
-                with cols[5]:
-                    if st.button("Update/Delete", key="detail_update_delete"):
-                        st.session_state.selected_track_number = track_number
-                        navigate_to_page('update_delete')
-                
-                # Second row of links
-                cols2 = st.columns(6) # Use same number of columns for alignment
-                with cols2[0]:
-                    if st.button("Maps", key="detail_maps"):
-                        navigate_to_page('browse_maps')
-                with cols2[1]:
-                    if st.button("Delete Entities", key="detail_delete_entities"):
-                        navigate_to_page('delete_entities')
+                if auth_manager.is_admin_logged_in():
+                    cols = st.columns(6)
+                    with cols[0]:
+                        if st.button("Home", key="detail_home"):
+                            navigate_to_page('home')
+                    with cols[1]:
+                        if st.button("Back", key="detail_back"):
+                            navigate_to_page(-1) # Go back to the previous page
+                    with cols[2]:
+                        if st.button("Browse Maps", key="detail_browse_maps"):
+                            navigate_to_page('browse_maps')
+                    with cols[3]:
+                        if st.button("Browse Entities", key="detail_browse_entities"):
+                            navigate_to_page('browse_entities')
+                    with cols[4]:
+                        if st.button("Insert Map", key="detail_insert_map"):
+                            navigate_to_page('insert_map')
+                    with cols[5]:
+                        if st.button("Update/Delete", key="detail_update_delete"):
+                            st.session_state.selected_track_number = track_number
+                            navigate_to_page('update_delete')
+                    
+                    # Second row of links
+                    cols2 = st.columns(6) # Use same number of columns for alignment
+                    with cols2[0]:
+                        if st.button("Maps", key="detail_maps"):
+                            navigate_to_page('browse_maps')
+                    with cols2[1]:
+                        if st.button("Delete Entities", key="detail_delete_entities"):
+                            navigate_to_page('delete_entities')
+                else:
+                    # Non-admin view
+                    cols = st.columns(3)
+                    with cols[0]:
+                        if st.button("Home", key="detail_home"):
+                            navigate_to_page('home')
+                    with cols[1]:
+                        if st.button("Back", key="detail_back"):
+                            navigate_to_page(-1)
+                    with cols[2]:
+                        if st.button("Browse Maps", key="detail_browse_maps"):
+                            navigate_to_page('browse_maps')
 
             else:
                 st.warning(f"Could not find details for map with track number: {track_number}")
