@@ -17,8 +17,7 @@ DATABASE_CONFIG = {
 
 # Authentication configuration
 AUTH_CONFIG = {
-    'admin_username': 'admin',
-    'admin_password': 'admin'
+    # Hardcoded credentials (to be removed)
 }
 
 # Application configuration

@@ -356,5 +356,28 @@ class DatabaseManager:
             if conn:
                 conn.close()
 
+    def get_user_by_username(self, username):
+        """
+        Get user by username
+        """
+        if not PYODBC_AVAILABLE:
+            return None
+
+        conn = self.get_connection()
+        if conn is None:
+            return None
+
+        try:
+            query = "SELECT * FROM BeismanDB.dbo.Users WHERE Username = ?"
+            df = pd.read_sql(query, conn, params=[username])
+            if not df.empty:
+                return df.iloc[0]
+            return None
+        except Exception:
+            return None
+        finally:
+            if conn:
+                conn.close()
+
 # Create a global instance
 db_manager = DatabaseManager()

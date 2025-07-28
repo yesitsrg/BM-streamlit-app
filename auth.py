@@ -5,21 +5,24 @@ Authentication module for Beisman Maps Management System
 
 import streamlit as st
 from config import AUTH_CONFIG
+from database import db_manager
 
 class AuthManager:
     """
-    Handles authentication operations
+    Handles all authentication-related operations
     """
     
     def __init__(self):
-        self.admin_username = AUTH_CONFIG['admin_username']
-        self.admin_password = AUTH_CONFIG['admin_password']
-    
+        pass
+
     def validate_credentials(self, username, password):
         """
         Validate admin credentials
         """
-        return username == self.admin_username and password == self.admin_password
+        user = db_manager.get_user_by_username(username)
+        if user is not None and user.PasswordHash == password:
+            return True
+        return False
     
     def login(self, username, password):
         """
