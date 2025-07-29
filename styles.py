@@ -83,26 +83,25 @@ def get_css_styles():
         }
         
         .stButton > button {
-            all: unset;
-            background: linear-gradient(to bottom, #dfdfdf 0%, #c0c0c0 100%) !important;
-            color: black !important;
-            border: 1px outset #c0c0c0 !important;
+            background: none !important;
+            border: none !important;
+            color: #0000EE !important;
+            padding: 0 !important;
+            text-decoration: underline !important;
             font-size: 11px !important;
             font-family: "MS Sans Serif", sans-serif !important;
-            border-radius: 0 !important;
-            padding: 2px 8px !important;
-            min-width: 60px !important;
-            height: 20px !important;
             cursor: pointer !important;
+            text-align: left !important;
         }
-        
+
         .stButton > button:hover {
-            background: linear-gradient(to bottom, #e0e0e0 0%, #d0d0d0 100%) !important;
+            color: #800080 !important;
+            background: none !important;
         }
-        
+
         .stButton > button:active {
-            border: 1px inset #c0c0c0 !important;
-            background: linear-gradient(to bottom, #c0c0c0 0%, #dfdfdf 100%) !important;
+            color: #FF0000 !important;
+            background: none !important;
         }
         
         .form-container {
