@@ -158,12 +158,7 @@ class PageHandlers:
         else:
             total_records = db_manager.get_beisman_data_count()
 
-        # Pagination controls
-        page_size = st.selectbox("Records per page:", [10, 25, 50], index=[10, 25, 50].index(st.session_state.page_size))
-        if page_size != st.session_state.page_size:
-            st.session_state.page_size = page_size
-            st.session_state.page_number = 0
-            rerun_app()
+        
 
         total_pages = (total_records // st.session_state.page_size) + (1 if total_records % st.session_state.page_size > 0 else 0)
         offset = st.session_state.page_number * st.session_state.page_size
@@ -240,11 +235,13 @@ class PageHandlers:
                 lambda: navigate_to_page('home')
             )
 
-        # Initialize session state for pagination
+        # Initialize session state for pagination and filtering
         if 'entity_page_number' not in st.session_state:
             st.session_state.entity_page_number = 0
         if 'entity_page_size' not in st.session_state:
             st.session_state.entity_page_size = 10
+        if 'selected_letter' not in st.session_state:
+            st.session_state.selected_letter = None
 
         # Database connection status
         if db_manager.is_available():
@@ -253,6 +250,25 @@ class PageHandlers:
         else:
             ui_components.render_status_message("error", "pyodbc module is not installed. Please install it using: pip install pyodbc", "⚠️")
 
+        # Alphabetical filter
+        st.write("Filter by first letter:")
+        alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        cols = st.columns(27)
+        for i, letter in enumerate(alphabet):
+            if cols[i].button(letter, key=f"letter_{letter}"):
+                st.session_state.selected_letter = letter
+                st.session_state.entity_page_number = 0
+                if "entity_search_search_input" in st.session_state:
+                    st.session_state.entity_search_search_input = ""
+                rerun_app()
+        
+        if cols[26].button("All", key="all_letters"):
+            st.session_state.selected_letter = None
+            st.session_state.entity_page_number = 0
+            rerun_app()
+
+        st.markdown("---")
+
         # Search section
         search_term, search_button, reset_button = ui_components.render_search_container("entity_search")
 
@@ -260,25 +276,34 @@ class PageHandlers:
         if reset_button:
             reset_search_input("entity_search")
             st.session_state.entity_page_number = 0
+            st.session_state.selected_letter = None
             rerun_app()
 
+        all_data = None
+        total_records = 0
+
+        # Determine the data to fetch
         if search_button or search_term:
+            st.session_state.selected_letter = None
             all_data = db_manager.search_entities(search_term)
-            total_records = len(all_data)
+            if all_data is not None:
+                total_records = len(all_data)
         else:
-            total_records = db_manager.get_entities_count()
+            all_data = db_manager.get_all_entities()
+            if all_data is not None:
+                if st.session_state.selected_letter:
+                    all_data['EntityName'] = all_data['EntityName'].astype(str)
+                    all_data = all_data[all_data['EntityName'].str.startswith(st.session_state.selected_letter, na=False)]
+                total_records = len(all_data)
+            else:
+                total_records = 0
 
-        # Pagination controls
-        page_size = st.selectbox("Records per page:", [10, 25, 50], index=[10, 25, 50].index(st.session_state.entity_page_size), key="entity_page_size_selectbox")
-        if page_size != st.session_state.entity_page_size:
-            st.session_state.entity_page_size = page_size
-            st.session_state.entity_page_number = 0
-            rerun_app()
+        
 
         total_pages = (total_records // st.session_state.entity_page_size) + (1 if total_records % st.session_state.entity_page_size > 0 else 0)
         offset = st.session_state.entity_page_number * st.session_state.entity_page_size
 
-        if search_button or search_term:
+        if all_data is not None:
             filtered_data = all_data.iloc[offset : offset + st.session_state.entity_page_size]
         else:
             filtered_data = db_manager.get_all_entities(limit=st.session_state.entity_page_size, offset=offset)
@@ -318,7 +343,7 @@ class PageHandlers:
                     st.session_state.entity_page_number += 1
                     rerun_app()
         else:
-            if search_term:
+            if search_term or st.session_state.selected_letter:
                 ui_components.render_status_message("warning", "No records found matching your search criteria.", "🔍")
             else:
                 ui_components.render_status_message("warning", "No data available in the database.", "📭")
@@ -490,7 +515,7 @@ class PageHandlers:
 
                 # Display current map details in editable fields
                 st.subheader("Update Map Details")
-                new_trace_number = st.text_input("Trace Number:", value=map_details.get('Number', ''))
+                new_trace_number = st.text_input("Trace Number:", value=map_details.get('Number', ''), disabled=True)
                 new_drawer = st.text_input("Drawer:", value=map_details.get('Drawer', ''))
                 new_description = st.text_area("Description:", value=map_details.get('PropertyDetails', ''))
 
