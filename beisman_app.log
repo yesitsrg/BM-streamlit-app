@@ -1,0 +1,1479 @@
+2025-08-05 22:47:29,053 - main - INFO - Starting Beisman Maps Application...
+2025-08-05 22:47:29,055 - database - INFO - DatabaseManager initialized
+2025-08-05 22:47:29,141 - database - INFO - Database connection test successful
+2025-08-05 22:50:10,668 - database - INFO - DatabaseManager initialized
+2025-08-05 22:50:10,706 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-05 22:50:10,720 - routers.maps - ERROR - Error retrieving maps: 1 validation error for MapResponse
+MapID
+  Field required [type=missing, input_value={'Number': '1041', 'Drawe...own of L.V. Socorro St'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-08-05 22:54:28,014 - main - INFO - Shutting down Beisman Maps Application...
+2025-08-05 22:54:29,545 - main - INFO - Starting Beisman Maps Application...
+2025-08-05 22:54:29,546 - database - INFO - DatabaseManager initialized
+2025-08-05 22:54:29,634 - database - INFO - Database connection test successful
+2025-08-05 22:56:01,057 - database - INFO - DatabaseManager initialized
+2025-08-05 22:56:01,111 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-05 22:56:01,113 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-05 22:56:04,607 - database - INFO - DatabaseManager initialized
+2025-08-05 22:56:04,645 - routers.maps - INFO - Retrieved map 1041
+2025-08-05 22:56:04,654 - database - INFO - DatabaseManager initialized
+2025-08-05 22:56:04,673 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-05 22:56:04,675 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-05 22:56:11,682 - database - INFO - DatabaseManager initialized
+2025-08-05 22:56:11,691 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-05 22:56:11,694 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-05 22:56:38,617 - database - INFO - DatabaseManager initialized
+2025-08-05 22:56:38,617 - database - INFO - Valid admin credentials for user: admin
+2025-08-05 22:56:38,624 - routers.auth - INFO - Successful login for user: admin
+2025-08-05 22:56:44,007 - database - INFO - DatabaseManager initialized
+2025-08-05 22:56:44,018 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-05 22:56:44,020 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-05 23:01:24,477 - main - INFO - Shutting down Beisman Maps Application...
+2025-08-05 23:01:26,160 - main - INFO - Starting Beisman Maps Application...
+2025-08-05 23:01:26,161 - database - INFO - DatabaseManager initialized
+2025-08-05 23:01:26,260 - database - INFO - Database connection test successful
+2025-08-05 23:02:01,783 - main - INFO - Shutting down Beisman Maps Application...
+2025-08-05 23:02:03,244 - main - INFO - Starting Beisman Maps Application...
+2025-08-05 23:02:03,245 - database - INFO - DatabaseManager initialized
+2025-08-05 23:02:03,360 - database - INFO - Database connection test successful
+2025-08-06 03:19:04,181 - database - INFO - DatabaseManager initialized
+2025-08-06 03:19:04,243 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-06 03:19:04,247 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-06 03:31:27,901 - main - INFO - Shutting down Beisman Maps Application...
+2025-08-06 03:31:29,455 - main - INFO - Starting Beisman Maps Application...
+2025-08-06 03:31:29,456 - database - INFO - DatabaseManager initialized
+2025-08-06 03:31:29,571 - database - INFO - Database connection test successful
+2025-08-06 05:43:06,285 - main - INFO - Shutting down Beisman Maps Application...
+2025-08-06 05:43:08,087 - main - INFO - Starting Beisman Maps Application...
+2025-08-06 05:43:08,089 - database - INFO - DatabaseManager initialized
+2025-08-06 05:43:08,156 - database - INFO - Database connection test successful
+2025-08-06 05:47:08,339 - main - INFO - Starting Beisman Maps Application...
+2025-08-06 05:47:08,340 - database - INFO - DatabaseManager initialized
+2025-08-06 05:47:08,397 - database - INFO - Database connection test successful
+2025-08-06 05:50:28,878 - watchfiles.main - INFO - 2 changes detected
+2025-08-06 05:50:29,097 - main - INFO - Shutting down Beisman Maps Application...
+2025-08-06 05:50:30,001 - watchfiles.main - INFO - 1 change detected
+2025-08-06 05:50:31,017 - watchfiles.main - INFO - 1 change detected
+2025-08-06 05:50:31,069 - main - INFO - Starting Beisman Maps Application...
+2025-08-06 05:50:31,070 - database - INFO - DatabaseManager initialized
+2025-08-06 05:50:31,178 - database - INFO - Database connection test successful
+2025-08-06 05:50:31,370 - watchfiles.main - INFO - 6 changes detected
+2025-08-06 05:51:38,351 - main - INFO - Starting Beisman Maps Application...
+2025-08-06 05:51:38,352 - database - INFO - DatabaseManager initialized
+2025-08-06 05:51:38,418 - database - INFO - Database connection test successful
+2025-08-06 05:54:14,217 - watchfiles.main - INFO - 2 changes detected
+2025-08-06 05:54:14,438 - main - INFO - Shutting down Beisman Maps Application...
+2025-08-06 05:54:15,326 - watchfiles.main - INFO - 1 change detected
+2025-08-06 05:54:16,242 - watchfiles.main - INFO - 1 change detected
+2025-08-06 05:54:16,283 - main - INFO - Starting Beisman Maps Application...
+2025-08-06 05:54:16,284 - database - INFO - DatabaseManager initialized
+2025-08-06 05:54:16,394 - database - INFO - Database connection test successful
+2025-08-06 05:54:16,594 - watchfiles.main - INFO - 6 changes detected
+2025-08-06 05:55:08,026 - main - INFO - Starting Beisman Maps Application...
+2025-08-06 05:55:08,027 - database - INFO - DatabaseManager initialized
+2025-08-06 05:55:08,077 - database - INFO - Database connection test successful
+2025-08-06 06:09:20,458 - watchfiles.main - INFO - 3 changes detected
+2025-08-06 06:09:57,335 - watchfiles.main - INFO - 2 changes detected
+2025-08-06 06:09:57,820 - main - INFO - Shutting down Beisman Maps Application...
+2025-08-06 06:09:58,479 - watchfiles.main - INFO - 1 change detected
+2025-08-06 06:09:59,497 - main - INFO - Starting Beisman Maps Application...
+2025-08-06 06:09:59,497 - database - INFO - DatabaseManager initialized
+2025-08-06 06:09:59,545 - watchfiles.main - INFO - 6 changes detected
+2025-08-06 06:09:59,674 - database - INFO - Database connection test successful
+2025-08-06 06:10:43,586 - watchfiles.main - INFO - 3 changes detected
+2025-08-06 06:12:15,710 - main - INFO - Starting Beisman Maps Application...
+2025-08-06 06:12:15,712 - database - INFO - DatabaseManager initialized
+2025-08-06 06:12:15,796 - database - INFO - Database connection test successful
+2025-08-06 06:12:29,234 - database - INFO - DatabaseManager initialized
+2025-08-06 06:12:29,273 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-06 06:12:29,277 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-06 06:12:35,970 - database - INFO - DatabaseManager initialized
+2025-08-06 06:12:35,986 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-06 06:12:35,988 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-06 06:12:42,508 - database - INFO - DatabaseManager initialized
+2025-08-06 06:12:42,516 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-06 06:12:42,518 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-06 06:12:44,810 - database - INFO - DatabaseManager initialized
+2025-08-06 06:12:44,818 - routers.maps - INFO - Retrieved map 1041
+2025-08-06 06:12:44,833 - database - INFO - DatabaseManager initialized
+2025-08-06 06:12:44,846 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-06 06:12:44,848 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-06 06:13:04,383 - database - INFO - DatabaseManager initialized
+2025-08-06 06:13:04,384 - database - INFO - Valid admin credentials for user: admin
+2025-08-06 06:13:04,392 - routers.auth - INFO - Successful login for user: admin
+2025-08-06 06:13:11,305 - database - INFO - DatabaseManager initialized
+2025-08-06 06:13:11,315 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-06 06:13:11,317 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-06 06:13:13,620 - database - INFO - DatabaseManager initialized
+2025-08-06 06:13:13,633 - routers.maps - INFO - Retrieved map 1041
+2025-08-06 06:13:13,641 - database - INFO - DatabaseManager initialized
+2025-08-06 06:13:13,653 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-06 06:13:13,658 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-06 06:22:56,738 - watchfiles.main - INFO - 3 changes detected
+2025-08-06 06:22:58,265 - watchfiles.main - INFO - 2 changes detected
+2025-08-06 06:23:54,943 - main - INFO - Starting Beisman Maps Application...
+2025-08-06 06:23:54,945 - database - INFO - DatabaseManager initialized
+2025-08-06 06:23:55,047 - database - INFO - Database connection test successful
+2025-08-06 06:24:22,995 - database - INFO - DatabaseManager initialized
+2025-08-06 06:24:23,014 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-06 06:24:23,017 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-06 06:24:43,044 - database - INFO - DatabaseManager initialized
+2025-08-06 06:24:43,056 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-06 06:24:43,058 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-06 07:54:03,741 - database - INFO - DatabaseManager initialized
+2025-08-06 07:54:03,742 - database - INFO - Valid admin credentials for user: admin
+2025-08-06 07:54:03,802 - routers.auth - INFO - Successful login for user: admin
+2025-08-06 07:54:09,495 - database - INFO - DatabaseManager initialized
+2025-08-06 07:54:09,524 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-06 07:54:09,528 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-06 07:59:51,587 - session_manager - INFO - Session cleared for user: admin
+2025-08-06 08:28:59,170 - watchfiles.main - INFO - 3 changes detected
+2025-08-06 08:29:16,327 - database - INFO - DatabaseManager initialized
+2025-08-06 08:29:16,376 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-06 08:29:16,379 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-06 08:29:21,968 - database - INFO - DatabaseManager initialized
+2025-08-06 08:29:21,983 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-06 08:29:21,985 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-06 08:30:15,504 - database - INFO - DatabaseManager initialized
+2025-08-06 08:30:15,505 - database - INFO - Valid admin credentials for user: admin
+2025-08-06 08:30:15,511 - routers.auth - INFO - Successful login for user: admin
+2025-08-06 08:30:24,438 - session_manager - INFO - Session cleared for user: admin
+2025-08-06 08:31:42,730 - database - INFO - DatabaseManager initialized
+2025-08-06 08:31:42,731 - database - INFO - Valid admin credentials for user: admin
+2025-08-06 08:31:42,772 - routers.auth - INFO - Successful login for user: admin
+2025-08-06 08:53:37,782 - watchfiles.main - INFO - 3 changes detected
+2025-08-06 08:53:39,777 - watchfiles.main - INFO - 2 changes detected
+2025-08-06 08:54:03,701 - session_manager - INFO - Session cleared for user: admin
+2025-08-06 10:00:14,203 - database - INFO - DatabaseManager initialized
+2025-08-06 10:00:14,270 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-06 10:00:14,273 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-06 10:00:29,805 - database - INFO - DatabaseManager initialized
+2025-08-06 10:00:29,815 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-06 10:00:29,816 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-06 10:01:11,017 - database - INFO - DatabaseManager initialized
+2025-08-06 10:01:11,020 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-06 10:01:11,023 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-06 10:01:37,656 - database - INFO - DatabaseManager initialized
+2025-08-06 10:01:37,656 - database - INFO - Valid admin credentials for user: admin
+2025-08-06 10:01:37,661 - routers.auth - INFO - Successful login for user: admin
+2025-08-06 10:01:49,595 - database - INFO - DatabaseManager initialized
+2025-08-06 10:01:49,602 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-06 10:01:49,603 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-06 10:06:25,947 - session_manager - INFO - Session cleared for user: admin
+2025-08-06 10:06:37,266 - database - INFO - DatabaseManager initialized
+2025-08-06 10:06:37,312 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-06 10:06:37,314 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-06 10:07:21,238 - database - INFO - DatabaseManager initialized
+2025-08-06 10:07:21,251 - database - WARNING - Invalid admin credentials for user: admin
+2025-08-06 10:07:21,252 - routers.auth - WARNING - Failed login attempt for user: admin
+2025-08-06 10:07:26,824 - database - INFO - DatabaseManager initialized
+2025-08-06 10:07:26,828 - database - WARNING - Invalid admin credentials for user: admin
+2025-08-06 10:07:26,829 - routers.auth - WARNING - Failed login attempt for user: admin
+2025-08-06 10:07:28,480 - database - INFO - DatabaseManager initialized
+2025-08-06 10:07:28,485 - database - WARNING - Invalid admin credentials for user: admin
+2025-08-06 10:07:28,486 - routers.auth - WARNING - Failed login attempt for user: admin
+2025-08-06 10:07:39,749 - database - INFO - DatabaseManager initialized
+2025-08-06 10:07:39,753 - database - INFO - Valid admin credentials for user: admin
+2025-08-06 10:07:39,759 - routers.auth - INFO - Successful login for user: admin
+2025-08-06 10:07:49,914 - session_manager - INFO - Session cleared for user: admin
+2025-08-06 10:08:01,197 - database - INFO - DatabaseManager initialized
+2025-08-06 10:08:01,198 - database - INFO - Valid admin credentials for user: admin
+2025-08-06 10:08:01,204 - routers.auth - INFO - Successful login for user: admin
+2025-08-06 10:08:07,754 - session_manager - INFO - Session cleared for user: admin
+2025-08-06 10:08:25,796 - database - INFO - DatabaseManager initialized
+2025-08-06 10:08:25,807 - database - INFO - Valid admin credentials for user: admin
+2025-08-06 10:08:25,811 - routers.auth - INFO - Successful login for user: admin
+2025-08-06 10:08:29,014 - session_manager - INFO - Session cleared for user: admin
+2025-08-06 10:16:14,193 - database - INFO - DatabaseManager initialized
+2025-08-06 10:16:14,195 - database - INFO - Valid admin credentials for user: admin
+2025-08-06 10:16:14,258 - routers.auth - INFO - Successful login for user: admin
+2025-08-06 10:16:17,774 - database - INFO - DatabaseManager initialized
+2025-08-06 10:16:17,785 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-06 10:16:17,789 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-06 10:16:21,316 - database - INFO - DatabaseManager initialized
+2025-08-06 10:16:21,324 - routers.maps - INFO - Retrieved map 1041
+2025-08-06 10:16:21,334 - database - INFO - DatabaseManager initialized
+2025-08-06 10:16:21,343 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-06 10:16:21,345 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-06 10:16:25,213 - database - INFO - DatabaseManager initialized
+2025-08-06 10:16:25,217 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-06 10:16:25,219 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-06 10:16:33,708 - database - INFO - DatabaseManager initialized
+2025-08-06 10:16:33,722 - database - ERROR - Database connection error: ('22018', "[22018] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the nvarchar value '1394-A' to data type int. (245) (SQLExecDirectW)")
+2025-08-06 10:16:33,723 - database - ERROR - Error retrieving map 158: ('22018', "[22018] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the nvarchar value '1394-A' to data type int. (245) (SQLExecDirectW)")
+2025-08-06 10:16:39,557 - database - INFO - DatabaseManager initialized
+2025-08-06 10:16:39,566 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-06 10:16:39,569 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-06 10:17:00,959 - database - INFO - DatabaseManager initialized
+2025-08-06 10:17:00,966 - routers.maps - INFO - Retrieved map 1041
+2025-08-06 10:17:00,977 - database - INFO - DatabaseManager initialized
+2025-08-06 10:17:00,987 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-06 10:17:00,988 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-06 10:28:18,774 - session_manager - INFO - Session cleared for user: admin
+2025-08-06 10:31:50,388 - database - INFO - DatabaseManager initialized
+2025-08-06 10:31:50,437 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-06 10:31:50,440 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-06 10:32:34,733 - database - INFO - DatabaseManager initialized
+2025-08-06 10:32:34,741 - routers.maps - INFO - Retrieved map 1041
+2025-08-06 10:32:34,749 - database - INFO - DatabaseManager initialized
+2025-08-06 10:32:34,759 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-06 10:32:34,761 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-06 10:32:52,827 - database - INFO - DatabaseManager initialized
+2025-08-06 10:32:52,834 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-06 10:32:52,838 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-06 10:33:25,251 - database - INFO - DatabaseManager initialized
+2025-08-06 10:33:25,263 - routers.maps - INFO - Retrieved map 1041
+2025-08-06 10:33:25,270 - database - INFO - DatabaseManager initialized
+2025-08-06 10:33:25,286 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-06 10:33:25,287 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-06 10:33:58,398 - database - INFO - DatabaseManager initialized
+2025-08-06 10:33:58,399 - database - INFO - Valid admin credentials for user: admin
+2025-08-06 10:33:58,405 - routers.auth - INFO - Successful login for user: admin
+2025-08-06 10:34:43,178 - database - INFO - DatabaseManager initialized
+2025-08-06 10:34:43,187 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-06 10:34:43,190 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-06 23:28:09,544 - watchfiles.main - INFO - 3 changes detected
+2025-08-06 23:28:10,536 - watchfiles.main - INFO - 2 changes detected
+2025-08-06 23:29:23,905 - main - INFO - Starting Beisman Maps Application...
+2025-08-06 23:29:23,908 - database - INFO - DatabaseManager initialized
+2025-08-06 23:29:23,974 - database - INFO - Database connection test successful
+2025-08-06 23:52:29,960 - watchfiles.main - INFO - 3 changes detected
+2025-08-07 00:10:32,777 - watchfiles.main - INFO - 3 changes detected
+2025-08-07 00:15:43,277 - watchfiles.main - INFO - 1 change detected
+2025-08-07 00:19:54,762 - watchfiles.main - INFO - 3 changes detected
+2025-08-07 00:20:39,493 - watchfiles.main - INFO - 2 changes detected
+2025-08-07 00:23:27,117 - watchfiles.main - INFO - 1 change detected
+2025-08-07 00:24:29,129 - watchfiles.main - INFO - 1 change detected
+2025-08-07 00:24:47,873 - watchfiles.main - INFO - 1 change detected
+2025-08-07 00:25:30,513 - watchfiles.main - INFO - 1 change detected
+2025-08-07 00:25:47,514 - watchfiles.main - INFO - 1 change detected
+2025-08-07 00:26:05,166 - watchfiles.main - INFO - 1 change detected
+2025-08-07 00:33:11,418 - watchfiles.main - INFO - 3 changes detected
+2025-08-07 00:40:40,696 - watchfiles.main - INFO - 3 changes detected
+2025-08-07 00:40:41,710 - watchfiles.main - INFO - 2 changes detected
+2025-08-07 00:41:47,555 - watchfiles.main - INFO - 2 changes detected
+2025-08-07 00:42:52,993 - watchfiles.main - INFO - 3 changes detected
+2025-08-07 00:43:11,873 - database - INFO - DatabaseManager initialized
+2025-08-07 00:43:11,940 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-07 00:43:11,944 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-07 00:43:23,373 - database - INFO - DatabaseManager initialized
+2025-08-07 00:43:23,380 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-07 00:43:23,381 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-07 09:46:36,518 - database - INFO - DatabaseManager initialized
+2025-08-07 09:46:36,569 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-07 09:46:36,572 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-07 09:46:41,072 - database - INFO - DatabaseManager initialized
+2025-08-07 09:46:41,079 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-07 09:46:41,081 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-07 10:13:07,924 - watchfiles.main - INFO - 2 changes detected
+2025-08-07 10:13:08,121 - main - INFO - Shutting down Beisman Maps Application...
+2025-08-07 10:13:08,704 - watchfiles.main - INFO - 1 change detected
+2025-08-07 10:13:09,720 - watchfiles.main - INFO - 1 change detected
+2025-08-07 10:13:11,111 - watchfiles.main - INFO - 1 change detected
+2025-08-07 10:13:11,190 - main - INFO - Starting Beisman Maps Application...
+2025-08-07 10:13:11,192 - database - INFO - DatabaseManager initialized
+2025-08-07 10:13:11,324 - database - INFO - Database connection test successful
+2025-08-07 10:13:11,465 - watchfiles.main - INFO - 6 changes detected
+2025-08-07 10:13:20,695 - watchfiles.main - INFO - 1 change detected
+2025-08-07 10:15:25,260 - main - INFO - Starting Beisman Maps Application...
+2025-08-07 10:15:25,262 - database - INFO - DatabaseManager initialized
+2025-08-07 10:15:25,319 - database - INFO - Database connection test successful
+2025-08-07 10:16:24,619 - watchfiles.main - INFO - 2 changes detected
+2025-08-07 10:16:28,885 - watchfiles.main - INFO - 3 changes detected
+2025-08-07 10:16:37,551 - watchfiles.main - INFO - 1 change detected
+2025-08-07 10:17:42,877 - watchfiles.main - INFO - 3 changes detected
+2025-08-07 10:31:17,425 - watchfiles.main - INFO - 3 changes detected
+2025-08-07 10:34:18,477 - watchfiles.main - INFO - 3 changes detected
+2025-08-07 10:37:53,914 - main - INFO - Starting Beisman Maps Application...
+2025-08-07 10:37:53,915 - database - INFO - DatabaseManager initialized
+2025-08-07 10:37:53,974 - database - INFO - Database connection test successful
+2025-08-07 10:40:46,055 - watchfiles.main - INFO - 4 changes detected
+2025-08-07 10:40:58,788 - watchfiles.main - INFO - 6 changes detected
+2025-08-07 10:42:49,676 - watchfiles.main - INFO - 1 change detected
+2025-08-07 10:42:50,132 - main - INFO - Shutting down Beisman Maps Application...
+2025-08-07 10:42:50,653 - watchfiles.main - INFO - 1 change detected
+2025-08-07 10:42:51,522 - watchfiles.main - INFO - 1 change detected
+2025-08-07 10:42:51,568 - main - INFO - Starting Beisman Maps Application...
+2025-08-07 10:42:51,569 - database - INFO - DatabaseManager initialized
+2025-08-07 10:42:51,688 - database - INFO - Database connection test successful
+2025-08-07 10:42:51,874 - watchfiles.main - INFO - 6 changes detected
+2025-08-07 10:44:57,486 - main - INFO - Starting Beisman Maps Application...
+2025-08-07 10:44:57,488 - database - INFO - DatabaseManager initialized
+2025-08-07 10:44:57,551 - database - INFO - Database connection test successful
+2025-08-07 10:49:38,231 - watchfiles.main - INFO - 3 changes detected
+2025-08-07 10:49:39,649 - watchfiles.main - INFO - 2 changes detected
+2025-08-07 10:51:24,530 - watchfiles.main - INFO - 1 change detected
+2025-08-07 10:58:51,938 - watchfiles.main - INFO - 1 change detected
+2025-08-07 11:00:49,055 - watchfiles.main - INFO - 1 change detected
+2025-08-07 11:02:16,009 - watchfiles.main - INFO - 1 change detected
+2025-08-07 11:02:37,090 - watchfiles.main - INFO - 1 change detected
+2025-08-07 11:03:59,863 - watchfiles.main - INFO - 1 change detected
+2025-08-07 11:10:25,465 - database - INFO - DatabaseManager initialized
+2025-08-07 11:10:25,466 - database - INFO - Valid admin credentials for user: admin
+2025-08-07 11:10:25,516 - routers.auth - INFO - Successful login for user: admin
+2025-08-07 11:10:54,924 - database - INFO - DatabaseManager initialized
+2025-08-07 11:10:54,942 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-07 11:10:54,944 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-07 11:11:09,299 - database - INFO - DatabaseManager initialized
+2025-08-07 11:11:09,309 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-07 11:11:09,311 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-07 11:12:18,589 - database - INFO - DatabaseManager initialized
+2025-08-07 11:12:18,597 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-07 11:12:18,599 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-07 21:09:01,928 - watchfiles.main - INFO - 3 changes detected
+2025-08-07 21:09:03,857 - watchfiles.main - INFO - 2 changes detected
+2025-08-07 21:10:39,259 - main - INFO - Starting Beisman Maps Application...
+2025-08-07 21:10:39,261 - database - INFO - DatabaseManager initialized
+2025-08-07 21:10:39,326 - database - INFO - Database connection test successful
+2025-08-07 21:10:49,941 - database - INFO - DatabaseManager initialized
+2025-08-07 21:10:49,964 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-07 21:10:49,967 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-07 21:10:53,185 - database - INFO - DatabaseManager initialized
+2025-08-07 21:10:53,200 - routers.maps - INFO - Retrieved map 1041
+2025-08-07 21:10:53,208 - database - INFO - DatabaseManager initialized
+2025-08-07 21:10:53,220 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-07 21:10:53,221 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-07 21:11:03,044 - database - INFO - DatabaseManager initialized
+2025-08-07 21:11:03,049 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-07 21:11:03,055 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-07 21:11:07,912 - database - INFO - DatabaseManager initialized
+2025-08-07 21:11:07,918 - routers.maps - INFO - Retrieved map 1041
+2025-08-07 21:11:07,934 - database - INFO - DatabaseManager initialized
+2025-08-07 21:11:07,938 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-07 21:11:07,939 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-07 21:11:10,276 - database - INFO - DatabaseManager initialized
+2025-08-07 21:11:10,279 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-07 21:11:10,282 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-07 21:11:12,289 - database - INFO - DatabaseManager initialized
+2025-08-07 21:11:12,294 - routers.maps - INFO - Retrieved map 1041
+2025-08-07 21:11:12,307 - database - INFO - DatabaseManager initialized
+2025-08-07 21:11:12,312 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-07 21:11:12,313 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-07 21:11:16,538 - database - INFO - DatabaseManager initialized
+2025-08-07 21:11:16,542 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-07 21:11:16,544 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-07 21:35:48,962 - database - INFO - DatabaseManager initialized
+2025-08-07 21:35:49,029 - database - INFO - Retrieved 7 maps (page 1/1)
+2025-08-07 21:35:49,031 - routers.maps - INFO - Retrieved 7 maps for page 1
+2025-08-07 21:39:22,710 - database - INFO - DatabaseManager initialized
+2025-08-07 21:39:22,711 - database - INFO - Valid admin credentials for user: admin
+2025-08-07 21:39:22,751 - routers.auth - INFO - Successful login for user: admin
+2025-08-07 21:39:46,452 - main - WARNING - Validation error on http://localhost:8000/api/maps: [{'type': 'missing', 'loc': ('body', 'Number'), 'msg': 'Field required', 'input': {'MapName': '123', 'Description': 'Test 123', 'Location': 'AM', 'CreatedBy': 'admin'}, 'url': 'https://errors.pydantic.dev/2.11/v/missing'}]
+2025-08-07 21:44:10,581 - watchfiles.main - INFO - 3 changes detected
+2025-08-07 21:44:28,167 - session_manager - INFO - Session cleared for user: admin
+2025-08-07 21:44:38,534 - database - INFO - DatabaseManager initialized
+2025-08-07 21:44:38,535 - database - INFO - Valid admin credentials for user: admin
+2025-08-07 21:44:38,576 - routers.auth - INFO - Successful login for user: admin
+2025-08-07 21:44:56,837 - database - INFO - DatabaseManager initialized
+2025-08-07 21:44:56,871 - database - INFO - Successfully inserted new map: 123
+2025-08-07 21:44:56,872 - routers.maps - INFO - Map '123' created by admin
+2025-08-07 21:45:07,424 - database - INFO - DatabaseManager initialized
+2025-08-07 21:45:07,435 - database - INFO - Retrieved 8 maps (page 1/1)
+2025-08-07 21:45:07,438 - routers.maps - INFO - Retrieved 8 maps for page 1
+2025-08-07 21:45:11,763 - database - INFO - DatabaseManager initialized
+2025-08-07 21:45:11,772 - routers.maps - INFO - Retrieved map 123
+2025-08-07 21:45:11,781 - database - INFO - DatabaseManager initialized
+2025-08-07 21:45:11,797 - database - INFO - Retrieved 0 entities (page 1/0)
+2025-08-07 21:45:11,798 - routers.entities - INFO - Retrieved 0 entities for page 1
+2025-08-07 21:45:24,323 - database - INFO - DatabaseManager initialized
+2025-08-07 21:45:24,327 - database - INFO - Retrieved 8 maps (page 1/1)
+2025-08-07 21:45:24,334 - routers.maps - INFO - Retrieved 8 maps for page 1
+2025-08-07 21:46:32,533 - database - INFO - DatabaseManager initialized
+2025-08-07 21:46:32,602 - database - INFO - Successfully inserted new map: 456
+2025-08-07 21:46:32,603 - routers.maps - INFO - Map '456' created by admin
+2025-08-07 21:46:48,141 - database - INFO - DatabaseManager initialized
+2025-08-07 21:46:48,157 - database - INFO - Successfully inserted new map: 789
+2025-08-07 21:46:48,158 - routers.maps - INFO - Map '789' created by admin
+2025-08-07 21:47:07,346 - database - INFO - DatabaseManager initialized
+2025-08-07 21:47:07,363 - database - INFO - Successfully inserted new map: 222
+2025-08-07 21:47:07,366 - routers.maps - INFO - Map '222' created by admin
+2025-08-07 21:47:37,688 - database - INFO - DatabaseManager initialized
+2025-08-07 21:47:37,707 - database - INFO - Successfully inserted new map: 555
+2025-08-07 21:47:37,708 - routers.maps - INFO - Map '555' created by admin
+2025-08-07 21:47:56,941 - database - INFO - DatabaseManager initialized
+2025-08-07 21:47:56,952 - database - INFO - Successfully inserted new map: 777
+2025-08-07 21:47:56,953 - routers.maps - INFO - Map '777' created by admin
+2025-08-07 21:48:07,771 - database - INFO - DatabaseManager initialized
+2025-08-07 21:48:07,780 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-07 21:48:07,781 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-07 21:48:35,052 - database - INFO - DatabaseManager initialized
+2025-08-07 21:48:35,060 - routers.maps - INFO - Retrieved map 123
+2025-08-07 21:48:35,069 - database - INFO - DatabaseManager initialized
+2025-08-07 21:48:35,082 - database - INFO - Retrieved 0 entities (page 1/0)
+2025-08-07 21:48:35,084 - routers.entities - INFO - Retrieved 0 entities for page 1
+2025-08-07 21:48:38,833 - database - INFO - DatabaseManager initialized
+2025-08-07 21:48:38,843 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-07 21:48:38,844 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-07 21:48:41,917 - database - INFO - DatabaseManager initialized
+2025-08-07 21:48:41,922 - routers.maps - INFO - Retrieved map 1041
+2025-08-07 21:48:41,933 - database - INFO - DatabaseManager initialized
+2025-08-07 21:48:41,949 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-07 21:48:41,954 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-07 21:48:46,262 - database - INFO - DatabaseManager initialized
+2025-08-07 21:48:46,270 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-07 21:48:46,271 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-07 21:48:49,533 - database - INFO - DatabaseManager initialized
+2025-08-07 21:48:49,541 - routers.maps - INFO - Retrieved map 123
+2025-08-07 21:48:49,549 - database - INFO - DatabaseManager initialized
+2025-08-07 21:48:49,560 - database - INFO - Retrieved 0 entities (page 1/0)
+2025-08-07 21:48:49,561 - routers.entities - INFO - Retrieved 0 entities for page 1
+2025-08-07 21:48:59,170 - database - INFO - DatabaseManager initialized
+2025-08-07 21:48:59,179 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-07 21:48:59,181 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-07 21:49:08,181 - database - INFO - DatabaseManager initialized
+2025-08-07 21:49:08,184 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-07 21:49:08,189 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-07 21:49:10,660 - database - INFO - DatabaseManager initialized
+2025-08-07 21:49:10,665 - routers.maps - INFO - Retrieved map 123
+2025-08-07 21:49:10,674 - database - INFO - DatabaseManager initialized
+2025-08-07 21:49:10,684 - database - INFO - Retrieved 0 entities (page 1/0)
+2025-08-07 21:49:10,686 - routers.entities - INFO - Retrieved 0 entities for page 1
+2025-08-07 21:49:15,509 - database - INFO - DatabaseManager initialized
+2025-08-07 21:49:15,514 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-07 21:49:15,518 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-07 21:49:18,225 - database - INFO - DatabaseManager initialized
+2025-08-07 21:49:18,229 - routers.maps - INFO - Retrieved map 1041
+2025-08-07 21:49:18,239 - database - INFO - DatabaseManager initialized
+2025-08-07 21:49:18,250 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-07 21:49:18,251 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-07 23:34:57,143 - database - INFO - DatabaseManager initialized
+2025-08-07 23:34:57,205 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-07 23:34:57,210 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-07 23:35:56,921 - database - INFO - DatabaseManager initialized
+2025-08-07 23:35:56,929 - routers.maps - INFO - Retrieved map 1041
+2025-08-07 23:35:56,938 - database - INFO - DatabaseManager initialized
+2025-08-07 23:35:56,951 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-07 23:35:56,954 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-07 23:36:09,192 - database - INFO - DatabaseManager initialized
+2025-08-07 23:36:09,199 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-07 23:36:09,201 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-07 23:36:11,869 - database - INFO - DatabaseManager initialized
+2025-08-07 23:36:11,872 - database - ERROR - Database connection error: ('22018', "[22018] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the nvarchar value '1394-A' to data type int. (245) (SQLExecDirectW)")
+2025-08-07 23:36:11,874 - database - ERROR - Error retrieving map 158: ('22018', "[22018] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the nvarchar value '1394-A' to data type int. (245) (SQLExecDirectW)")
+2025-08-07 23:36:52,378 - database - INFO - DatabaseManager initialized
+2025-08-07 23:36:52,386 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-07 23:36:52,388 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-07 23:37:20,933 - database - INFO - DatabaseManager initialized
+2025-08-07 23:37:20,939 - database - ERROR - Database connection error: ('22018', "[22018] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the nvarchar value '1394-A' to data type int. (245) (SQLExecDirectW)")
+2025-08-07 23:37:20,940 - database - ERROR - Error retrieving map 158: ('22018', "[22018] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the nvarchar value '1394-A' to data type int. (245) (SQLExecDirectW)")
+2025-08-07 23:40:09,317 - watchfiles.main - INFO - 3 changes detected
+2025-08-07 23:41:17,793 - main - INFO - Starting Beisman Maps Application...
+2025-08-07 23:41:17,794 - database - INFO - DatabaseManager initialized
+2025-08-07 23:41:17,849 - database - INFO - Database connection test successful
+2025-08-07 23:41:41,098 - database - INFO - DatabaseManager initialized
+2025-08-07 23:41:41,100 - database - INFO - Valid admin credentials for user: admin
+2025-08-07 23:41:41,114 - routers.auth - INFO - Successful login for user: admin
+2025-08-07 23:41:43,533 - database - INFO - DatabaseManager initialized
+2025-08-07 23:41:43,546 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-07 23:41:43,547 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-07 23:41:47,997 - database - INFO - DatabaseManager initialized
+2025-08-07 23:41:48,008 - routers.maps - INFO - Retrieved map 1041
+2025-08-07 23:41:48,017 - database - INFO - DatabaseManager initialized
+2025-08-07 23:41:48,028 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-07 23:41:48,029 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-07 23:41:52,815 - database - INFO - DatabaseManager initialized
+2025-08-07 23:41:52,826 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-07 23:41:52,828 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-07 23:41:56,957 - main - WARNING - Validation error on http://localhost:8000/api/maps/1394-A: [{'type': 'int_parsing', 'loc': ('path', 'map_number'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': '1394-A', 'url': 'https://errors.pydantic.dev/2.11/v/int_parsing'}]
+2025-08-07 23:44:48,327 - watchfiles.main - INFO - 1 change detected
+2025-08-07 23:44:48,468 - main - INFO - Shutting down Beisman Maps Application...
+2025-08-07 23:44:49,076 - watchfiles.main - INFO - 1 change detected
+2025-08-07 23:44:49,994 - watchfiles.main - INFO - 5 changes detected
+2025-08-07 23:44:50,124 - main - INFO - Starting Beisman Maps Application...
+2025-08-07 23:44:50,125 - database - INFO - DatabaseManager initialized
+2025-08-07 23:44:50,223 - database - INFO - Database connection test successful
+2025-08-07 23:44:50,348 - watchfiles.main - INFO - 1 change detected
+2025-08-07 23:45:54,574 - main - INFO - Starting Beisman Maps Application...
+2025-08-07 23:45:54,576 - database - INFO - DatabaseManager initialized
+2025-08-07 23:45:54,650 - database - INFO - Database connection test successful
+2025-08-07 23:46:06,340 - database - INFO - DatabaseManager initialized
+2025-08-07 23:46:06,348 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-07 23:46:06,350 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-07 23:46:09,650 - database - INFO - DatabaseManager initialized
+2025-08-07 23:46:09,658 - routers.maps - INFO - Retrieved map 123
+2025-08-07 23:46:09,663 - database - INFO - DatabaseManager initialized
+2025-08-07 23:46:09,680 - database - INFO - Retrieved 0 entities (page 1/0)
+2025-08-07 23:46:09,681 - routers.entities - INFO - Retrieved 0 entities for page 1
+2025-08-07 23:46:14,932 - database - INFO - DatabaseManager initialized
+2025-08-07 23:46:14,951 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-07 23:46:14,953 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-07 23:46:18,947 - database - INFO - DatabaseManager initialized
+2025-08-07 23:46:18,954 - routers.maps - INFO - Retrieved map 1394-A
+2025-08-07 23:46:18,962 - database - INFO - DatabaseManager initialized
+2025-08-07 23:46:18,974 - database - INFO - Retrieved 0 entities (page 1/0)
+2025-08-07 23:46:18,976 - routers.entities - INFO - Retrieved 0 entities for page 1
+2025-08-07 23:46:32,491 - database - INFO - DatabaseManager initialized
+2025-08-07 23:46:32,495 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-07 23:46:32,497 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-07 23:46:46,608 - database - INFO - DatabaseManager initialized
+2025-08-07 23:46:46,609 - database - INFO - Valid admin credentials for user: admin
+2025-08-07 23:46:46,618 - routers.auth - INFO - Successful login for user: admin
+2025-08-07 23:46:50,450 - database - INFO - DatabaseManager initialized
+2025-08-07 23:46:50,457 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-07 23:46:50,459 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-07 23:47:02,798 - database - INFO - DatabaseManager initialized
+2025-08-07 23:47:02,810 - routers.maps - INFO - Retrieved map 1041
+2025-08-07 23:47:02,819 - database - INFO - DatabaseManager initialized
+2025-08-07 23:47:02,830 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-07 23:47:02,832 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-07 23:47:11,200 - database - INFO - DatabaseManager initialized
+2025-08-07 23:47:11,204 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-07 23:47:11,206 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-07 23:56:43,611 - watchfiles.main - INFO - 1 change detected
+2025-08-07 23:57:30,782 - watchfiles.main - INFO - 3 changes detected
+2025-08-07 23:57:40,396 - database - INFO - DatabaseManager initialized
+2025-08-07 23:57:40,436 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-07 23:57:40,438 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 00:14:09,281 - watchfiles.main - INFO - 1 change detected
+2025-08-08 00:14:33,207 - database - INFO - DatabaseManager initialized
+2025-08-08 00:14:33,253 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 00:14:33,254 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 00:14:36,603 - database - INFO - DatabaseManager initialized
+2025-08-08 00:14:36,606 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 00:14:36,608 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 00:14:42,241 - database - INFO - DatabaseManager initialized
+2025-08-08 00:14:42,245 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 00:14:42,252 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 00:14:47,499 - database - INFO - DatabaseManager initialized
+2025-08-08 00:14:47,510 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 00:14:47,511 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 00:14:51,809 - database - INFO - DatabaseManager initialized
+2025-08-08 00:14:51,820 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 00:14:51,822 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 00:15:02,107 - session_manager - INFO - Session cleared for user: admin
+2025-08-08 00:15:04,446 - database - INFO - DatabaseManager initialized
+2025-08-08 00:15:04,449 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 00:15:04,453 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 00:15:07,531 - database - INFO - DatabaseManager initialized
+2025-08-08 00:15:07,538 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 00:15:07,539 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 00:15:11,106 - database - INFO - DatabaseManager initialized
+2025-08-08 00:15:11,110 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 00:15:11,114 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 00:15:21,393 - database - INFO - DatabaseManager initialized
+2025-08-08 00:15:21,401 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-08 00:15:21,403 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-08 00:15:52,358 - database - INFO - DatabaseManager initialized
+2025-08-08 00:15:52,358 - database - INFO - Valid admin credentials for user: admin
+2025-08-08 00:15:52,363 - routers.auth - INFO - Successful login for user: admin
+2025-08-08 00:16:46,509 - database - INFO - DatabaseManager initialized
+2025-08-08 00:16:46,516 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-08 00:16:46,519 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-08 00:16:49,019 - database - INFO - DatabaseManager initialized
+2025-08-08 00:16:49,026 - routers.maps - INFO - Retrieved map 1041
+2025-08-08 00:16:49,036 - database - INFO - DatabaseManager initialized
+2025-08-08 00:16:49,045 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 00:16:49,046 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 00:45:51,186 - database - INFO - DatabaseManager initialized
+2025-08-08 00:45:51,259 - database - INFO - Successfully inserted new map: 1370-B
+2025-08-08 00:45:51,261 - routers.maps - INFO - Map '1370-B' created by admin
+2025-08-08 00:45:59,831 - database - INFO - DatabaseManager initialized
+2025-08-08 00:45:59,840 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 00:45:59,841 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 00:46:02,355 - database - INFO - DatabaseManager initialized
+2025-08-08 00:46:02,362 - routers.maps - INFO - Retrieved map 1041
+2025-08-08 00:46:02,368 - database - INFO - DatabaseManager initialized
+2025-08-08 00:46:02,379 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 00:46:02,380 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 00:54:39,732 - database - INFO - DatabaseManager initialized
+2025-08-08 00:54:39,774 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-08 00:54:39,775 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-08 00:54:42,488 - database - INFO - DatabaseManager initialized
+2025-08-08 00:54:42,496 - routers.maps - INFO - Retrieved map 1041
+2025-08-08 00:54:42,508 - database - INFO - DatabaseManager initialized
+2025-08-08 00:54:42,518 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 00:54:42,520 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 01:26:28,242 - watchfiles.main - INFO - 3 changes detected
+2025-08-08 01:27:51,770 - main - INFO - Starting Beisman Maps Application...
+2025-08-08 01:27:51,771 - database - INFO - DatabaseManager initialized
+2025-08-08 01:27:51,849 - database - INFO - Database connection test successful
+2025-08-08 01:28:24,670 - database - INFO - DatabaseManager initialized
+2025-08-08 01:28:24,670 - database - INFO - Valid admin credentials for user: admin
+2025-08-08 01:28:24,679 - routers.auth - INFO - Successful login for user: admin
+2025-08-08 01:28:27,777 - database - INFO - DatabaseManager initialized
+2025-08-08 01:28:27,799 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-08 01:28:27,804 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-08 01:28:32,574 - database - INFO - DatabaseManager initialized
+2025-08-08 01:28:32,584 - routers.maps - INFO - Retrieved map 1370-B
+2025-08-08 01:28:32,597 - database - INFO - DatabaseManager initialized
+2025-08-08 01:28:32,611 - database - INFO - Retrieved 0 entities (page 1/0)
+2025-08-08 01:28:32,615 - routers.entities - INFO - Retrieved 0 entities for page 1
+2025-08-08 01:33:06,883 - watchfiles.main - INFO - 1 change detected
+2025-08-08 01:34:08,596 - main - INFO - Starting Beisman Maps Application...
+2025-08-08 01:34:08,596 - database - INFO - DatabaseManager initialized
+2025-08-08 01:34:08,651 - database - INFO - Database connection test successful
+2025-08-08 02:31:32,151 - watchfiles.main - INFO - 1 change detected
+2025-08-08 02:39:06,600 - main - INFO - Starting Beisman Maps Application...
+2025-08-08 02:39:06,601 - database - INFO - DatabaseManager initialized
+2025-08-08 02:39:06,649 - database - INFO - Database connection test successful
+2025-08-08 02:40:55,853 - watchfiles.main - INFO - 3 changes detected
+2025-08-08 02:41:05,256 - watchfiles.main - INFO - 3 changes detected
+2025-08-08 02:41:33,984 - watchfiles.main - INFO - 3 changes detected
+2025-08-08 02:42:00,417 - watchfiles.main - INFO - 3 changes detected
+2025-08-08 02:58:23,748 - watchfiles.main - INFO - 1 change detected
+2025-08-08 03:00:39,769 - main - INFO - Starting Beisman Maps Application...
+2025-08-08 03:00:39,770 - database - INFO - DatabaseManager initialized
+2025-08-08 03:00:39,853 - database - INFO - Database connection test successful
+2025-08-08 03:01:05,155 - database - INFO - DatabaseManager initialized
+2025-08-08 03:01:05,156 - database - INFO - Valid admin credentials for user: admin
+2025-08-08 03:01:05,163 - routers.auth - INFO - Successful login for user: admin
+2025-08-08 20:54:48,224 - database - INFO - DatabaseManager initialized
+2025-08-08 20:54:48,286 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-08 20:54:48,290 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-08 20:54:50,500 - database - INFO - DatabaseManager initialized
+2025-08-08 20:54:50,512 - routers.maps - INFO - Retrieved map 1041
+2025-08-08 20:54:50,521 - database - INFO - DatabaseManager initialized
+2025-08-08 20:54:50,549 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 20:54:50,550 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 20:54:54,671 - database - INFO - DatabaseManager initialized
+2025-08-08 20:54:54,675 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-08 20:54:54,677 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-08 20:54:56,807 - database - INFO - DatabaseManager initialized
+2025-08-08 20:54:56,815 - routers.maps - INFO - Retrieved map 1370-B
+2025-08-08 20:54:56,826 - database - INFO - DatabaseManager initialized
+2025-08-08 20:54:56,835 - database - INFO - Retrieved 0 entities (page 1/0)
+2025-08-08 20:54:56,836 - routers.entities - INFO - Retrieved 0 entities for page 1
+2025-08-08 20:55:00,463 - database - INFO - DatabaseManager initialized
+2025-08-08 20:55:00,466 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-08 20:55:00,469 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-08 20:55:02,586 - database - INFO - DatabaseManager initialized
+2025-08-08 20:55:02,589 - routers.maps - INFO - Retrieved map 1370-B
+2025-08-08 20:55:02,603 - database - INFO - DatabaseManager initialized
+2025-08-08 20:55:02,607 - database - INFO - Retrieved 0 entities (page 1/0)
+2025-08-08 20:55:02,608 - routers.entities - INFO - Retrieved 0 entities for page 1
+2025-08-08 20:55:06,731 - database - INFO - DatabaseManager initialized
+2025-08-08 20:55:06,737 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-08 20:55:06,743 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-08 21:02:37,915 - watchfiles.main - INFO - 1 change detected
+2025-08-08 21:02:38,270 - watchfiles.main - INFO - 1 change detected
+2025-08-08 21:02:38,636 - watchfiles.main - INFO - 1 change detected
+2025-08-08 21:02:42,200 - watchfiles.main - INFO - 1 change detected
+2025-08-08 21:04:13,705 - watchfiles.main - INFO - 1 change detected
+2025-08-08 21:09:41,601 - watchfiles.main - INFO - 1 change detected
+2025-08-08 21:09:41,955 - watchfiles.main - INFO - 1 change detected
+2025-08-08 21:30:37,862 - watchfiles.main - INFO - 3 changes detected
+2025-08-08 21:30:59,719 - database - INFO - DatabaseManager initialized
+2025-08-08 21:30:59,775 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 21:30:59,784 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 21:31:16,063 - database - INFO - DatabaseManager initialized
+2025-08-08 21:31:16,065 - database - INFO - Valid admin credentials for user: admin
+2025-08-08 21:31:16,073 - routers.auth - INFO - Successful login for user: admin
+2025-08-08 21:43:57,431 - watchfiles.main - INFO - 3 changes detected
+2025-08-08 21:45:28,652 - main - INFO - Starting Beisman Maps Application...
+2025-08-08 21:45:28,654 - database - INFO - DatabaseManager initialized
+2025-08-08 21:45:28,723 - database - INFO - Database connection test successful
+2025-08-08 21:50:35,871 - watchfiles.main - INFO - 2 changes detected
+2025-08-08 21:55:46,564 - watchfiles.main - INFO - 1 change detected
+2025-08-08 21:55:48,084 - watchfiles.main - INFO - 1 change detected
+2025-08-08 21:55:54,127 - watchfiles.main - INFO - 1 change detected
+2025-08-08 21:59:20,395 - watchfiles.main - INFO - 1 change detected
+2025-08-08 22:01:49,605 - watchfiles.main - INFO - 1 change detected
+2025-08-08 22:03:15,349 - watchfiles.main - INFO - 1 change detected
+2025-08-08 22:03:38,822 - watchfiles.main - INFO - 1 change detected
+2025-08-08 22:04:06,126 - watchfiles.main - INFO - 1 change detected
+2025-08-08 22:05:54,402 - watchfiles.main - INFO - 1 change detected
+2025-08-08 22:07:09,321 - watchfiles.main - INFO - 1 change detected
+2025-08-08 22:09:27,589 - database - INFO - DatabaseManager initialized
+2025-08-08 22:09:27,638 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 22:09:27,641 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 22:15:20,990 - watchfiles.main - INFO - 1 change detected
+2025-08-08 22:15:30,493 - database - INFO - DatabaseManager initialized
+2025-08-08 22:15:30,556 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 22:15:30,558 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 22:15:45,208 - watchfiles.main - INFO - 1 change detected
+2025-08-08 22:15:51,202 - database - INFO - DatabaseManager initialized
+2025-08-08 22:15:51,207 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 22:15:51,209 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 22:18:00,511 - watchfiles.main - INFO - 1 change detected
+2025-08-08 22:18:13,440 - database - INFO - DatabaseManager initialized
+2025-08-08 22:18:13,495 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 22:18:13,497 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 22:18:24,440 - watchfiles.main - INFO - 1 change detected
+2025-08-08 22:18:25,096 - watchfiles.main - INFO - 1 change detected
+2025-08-08 22:18:25,448 - watchfiles.main - INFO - 1 change detected
+2025-08-08 22:21:58,014 - watchfiles.main - INFO - 1 change detected
+2025-08-08 22:22:06,800 - database - INFO - DatabaseManager initialized
+2025-08-08 22:22:06,851 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 22:22:06,853 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 22:24:29,162 - watchfiles.main - INFO - 1 change detected
+2025-08-08 22:24:36,125 - watchfiles.main - INFO - 1 change detected
+2025-08-08 22:24:48,371 - database - INFO - DatabaseManager initialized
+2025-08-08 22:24:48,412 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 22:24:48,414 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 22:33:00,625 - watchfiles.main - INFO - 3 changes detected
+2025-08-08 22:33:35,890 - database - INFO - DatabaseManager initialized
+2025-08-08 22:33:35,940 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 22:33:35,941 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 22:36:38,126 - database - INFO - DatabaseManager initialized
+2025-08-08 22:36:38,171 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 22:36:38,172 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 22:45:01,385 - watchfiles.main - INFO - 1 change detected
+2025-08-08 22:45:19,845 - database - INFO - DatabaseManager initialized
+2025-08-08 22:45:19,892 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 22:45:19,894 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 22:47:21,691 - database - INFO - DatabaseManager initialized
+2025-08-08 22:47:21,762 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 22:47:21,764 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 22:50:52,296 - watchfiles.main - INFO - 1 change detected
+2025-08-08 22:51:08,457 - database - INFO - DatabaseManager initialized
+2025-08-08 22:51:08,506 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 22:51:08,507 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 23:03:03,522 - watchfiles.main - INFO - 3 changes detected
+2025-08-08 23:03:39,677 - database - INFO - DatabaseManager initialized
+2025-08-08 23:03:39,733 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 23:03:39,737 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-08 23:10:56,830 - main - INFO - Starting Beisman Maps Application...
+2025-08-08 23:10:56,832 - database - INFO - DatabaseManager initialized
+2025-08-08 23:10:56,887 - database - INFO - Database connection test successful
+2025-08-08 23:11:12,747 - database - INFO - DatabaseManager initialized
+2025-08-08 23:11:12,760 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-08 23:11:12,762 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 01:41:19,675 - main - INFO - Starting Beisman Maps Application...
+2025-08-09 01:41:19,679 - database - INFO - DatabaseManager initialized
+2025-08-09 01:41:19,757 - database - INFO - Database connection test successful
+2025-08-09 03:01:09,481 - watchfiles.main - INFO - 1 change detected
+2025-08-09 03:02:48,223 - watchfiles.main - INFO - 3 changes detected
+2025-08-09 03:10:26,073 - watchfiles.main - INFO - 4 changes detected
+2025-08-09 03:10:26,427 - watchfiles.main - INFO - 1 change detected
+2025-08-09 03:10:59,489 - watchfiles.main - INFO - 2 changes detected
+2025-08-09 03:11:46,353 - database - INFO - DatabaseManager initialized
+2025-08-09 03:11:46,401 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 03:11:46,404 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 03:14:26,114 - watchfiles.main - INFO - 3 changes detected
+2025-08-09 03:14:48,294 - watchfiles.main - INFO - 2 changes detected
+2025-08-09 03:15:05,076 - database - INFO - DatabaseManager initialized
+2025-08-09 03:15:05,135 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 03:15:05,137 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 03:15:07,816 - database - INFO - DatabaseManager initialized
+2025-08-09 03:15:07,821 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 03:15:07,823 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 03:15:11,784 - database - INFO - DatabaseManager initialized
+2025-08-09 03:15:11,788 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 03:15:11,789 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 03:15:15,251 - database - INFO - DatabaseManager initialized
+2025-08-09 03:15:15,257 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 03:15:15,258 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 03:15:21,760 - database - INFO - DatabaseManager initialized
+2025-08-09 03:15:21,769 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 03:15:21,770 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 03:15:49,099 - database - INFO - DatabaseManager initialized
+2025-08-09 03:15:49,106 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 03:15:49,124 - database - INFO - DatabaseManager initialized
+2025-08-09 03:15:49,135 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 03:15:49,136 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 03:15:53,004 - database - INFO - DatabaseManager initialized
+2025-08-09 03:15:53,007 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 03:15:53,009 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 07:38:39,929 - database - INFO - DatabaseManager initialized
+2025-08-09 07:38:39,989 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 07:38:39,994 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 07:38:56,218 - database - INFO - DatabaseManager initialized
+2025-08-09 07:38:56,228 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 07:38:56,229 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 07:43:19,440 - watchfiles.main - INFO - 1 change detected
+2025-08-09 07:43:37,732 - database - INFO - DatabaseManager initialized
+2025-08-09 07:43:37,775 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 07:43:37,776 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 07:43:45,068 - database - INFO - DatabaseManager initialized
+2025-08-09 07:43:45,112 - database - INFO - Retrieved 1 maps (page 1/1)
+2025-08-09 07:43:45,119 - routers.maps - INFO - Retrieved 1 maps for page 1
+2025-08-09 07:43:53,092 - database - INFO - DatabaseManager initialized
+2025-08-09 07:43:53,100 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 07:43:53,103 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 07:44:16,350 - database - INFO - DatabaseManager initialized
+2025-08-09 07:44:16,370 - database - INFO - Retrieved 1 maps (page 1/1)
+2025-08-09 07:44:16,372 - routers.maps - INFO - Retrieved 1 maps for page 1
+2025-08-09 07:44:31,765 - database - INFO - DatabaseManager initialized
+2025-08-09 07:44:31,772 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 07:44:31,775 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 07:44:37,182 - database - INFO - DatabaseManager initialized
+2025-08-09 07:44:37,197 - database - INFO - Retrieved 1 entities (page 1/1)
+2025-08-09 07:44:37,198 - routers.entities - INFO - Retrieved 1 entities for page 1
+2025-08-09 07:44:40,093 - database - INFO - DatabaseManager initialized
+2025-08-09 07:44:40,099 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 07:44:40,112 - database - INFO - DatabaseManager initialized
+2025-08-09 07:44:40,114 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 07:44:40,116 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 07:44:52,742 - database - INFO - DatabaseManager initialized
+2025-08-09 07:44:52,743 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 07:44:52,749 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 07:44:55,029 - database - INFO - DatabaseManager initialized
+2025-08-09 07:44:55,039 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 07:44:55,043 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 07:45:01,266 - database - INFO - DatabaseManager initialized
+2025-08-09 07:45:01,282 - database - INFO - Retrieved 1 maps (page 1/1)
+2025-08-09 07:45:01,284 - routers.maps - INFO - Retrieved 1 maps for page 1
+2025-08-09 07:45:10,468 - database - INFO - DatabaseManager initialized
+2025-08-09 07:45:10,476 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 07:45:10,479 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 07:45:16,560 - database - INFO - DatabaseManager initialized
+2025-08-09 07:45:16,575 - database - INFO - Retrieved 1 entities (page 1/1)
+2025-08-09 07:45:16,576 - routers.entities - INFO - Retrieved 1 entities for page 1
+2025-08-09 07:45:19,020 - database - INFO - DatabaseManager initialized
+2025-08-09 07:45:19,026 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 07:45:19,036 - database - INFO - DatabaseManager initialized
+2025-08-09 07:45:19,039 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 07:45:19,043 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 07:46:01,422 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 07:46:12,609 - database - INFO - DatabaseManager initialized
+2025-08-09 07:46:12,611 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 07:46:12,616 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 07:47:09,178 - database - INFO - DatabaseManager initialized
+2025-08-09 07:47:09,208 - database - INFO - Successfully inserted new map: 1360
+2025-08-09 07:47:09,209 - routers.maps - INFO - Map '1360' created by admin
+2025-08-09 07:47:44,695 - database - INFO - DatabaseManager initialized
+2025-08-09 07:47:44,703 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 07:47:44,704 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 07:47:53,760 - database - INFO - DatabaseManager initialized
+2025-08-09 07:47:53,771 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 07:47:53,772 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 07:48:01,547 - database - INFO - DatabaseManager initialized
+2025-08-09 07:48:01,550 - routers.maps - INFO - Retrieved map 1360
+2025-08-09 07:48:01,558 - database - INFO - DatabaseManager initialized
+2025-08-09 07:48:01,567 - database - INFO - Retrieved 0 entities (page 1/0)
+2025-08-09 07:48:01,568 - routers.entities - INFO - Retrieved 0 entities for page 1
+2025-08-09 07:48:12,124 - database - INFO - DatabaseManager initialized
+2025-08-09 07:48:12,135 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 07:48:12,138 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 07:48:57,321 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 07:50:30,035 - database - INFO - DatabaseManager initialized
+2025-08-09 07:50:30,035 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 07:50:30,091 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 08:03:34,444 - watchfiles.main - INFO - 3 changes detected
+2025-08-09 08:04:36,482 - watchfiles.main - INFO - 2 changes detected
+2025-08-09 08:05:03,167 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 08:05:15,201 - database - INFO - DatabaseManager initialized
+2025-08-09 08:05:15,202 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 08:05:15,242 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 08:05:18,386 - database - INFO - DatabaseManager initialized
+2025-08-09 08:05:18,400 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 08:05:18,405 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 08:05:20,437 - database - INFO - DatabaseManager initialized
+2025-08-09 08:05:20,443 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 08:05:20,452 - database - INFO - DatabaseManager initialized
+2025-08-09 08:05:20,461 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 08:05:20,462 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 08:05:23,496 - database - INFO - DatabaseManager initialized
+2025-08-09 08:05:23,500 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 08:05:23,510 - database - INFO - DatabaseManager initialized
+2025-08-09 08:05:23,515 - routers.entities - INFO - Retrieved 2 entities for map 1041
+2025-08-09 08:08:45,947 - watchfiles.main - INFO - 1 change detected
+2025-08-09 08:09:39,954 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 08:10:02,913 - database - INFO - DatabaseManager initialized
+2025-08-09 08:10:02,914 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 08:10:02,951 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 08:10:12,686 - database - INFO - DatabaseManager initialized
+2025-08-09 08:10:12,695 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 08:10:12,698 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 08:10:14,852 - database - INFO - DatabaseManager initialized
+2025-08-09 08:10:14,860 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 08:10:14,880 - database - INFO - DatabaseManager initialized
+2025-08-09 08:10:14,892 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 08:10:14,894 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 08:10:17,743 - database - INFO - DatabaseManager initialized
+2025-08-09 08:10:17,747 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 08:10:17,755 - database - INFO - DatabaseManager initialized
+2025-08-09 08:10:17,758 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 08:10:17,761 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 08:10:40,118 - database - INFO - DatabaseManager initialized
+2025-08-09 08:10:40,139 - database - INFO - Successfully added entity RRRRR HHJH to map 1041
+2025-08-09 08:10:40,141 - routers.entities - INFO - Entity 'RRRRR HHJH' added to map 1041 by admin
+2025-08-09 08:10:52,769 - database - INFO - DatabaseManager initialized
+2025-08-09 08:10:52,774 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 08:10:52,784 - database - INFO - DatabaseManager initialized
+2025-08-09 08:10:52,788 - database - INFO - Retrieved 3 entities (page 1/1)
+2025-08-09 08:10:52,791 - routers.entities - INFO - Retrieved 3 entities for page 1
+2025-08-09 08:11:00,366 - database - INFO - DatabaseManager initialized
+2025-08-09 08:11:00,372 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 08:11:00,384 - database - INFO - DatabaseManager initialized
+2025-08-09 08:11:00,387 - database - INFO - Retrieved 3 entities (page 1/1)
+2025-08-09 08:11:00,389 - routers.entities - INFO - Retrieved 3 entities for page 1
+2025-08-09 08:11:03,099 - database - INFO - DatabaseManager initialized
+2025-08-09 08:11:03,106 - database - INFO - Retrieved 3 entities (page 1/1)
+2025-08-09 08:11:03,107 - routers.entities - INFO - Retrieved 3 entities for page 1
+2025-08-09 08:14:24,674 - watchfiles.main - INFO - 1 change detected
+2025-08-09 08:15:05,485 - watchfiles.main - INFO - 1 change detected
+2025-08-09 08:15:17,933 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 08:15:32,684 - database - INFO - DatabaseManager initialized
+2025-08-09 08:15:32,685 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 08:15:32,742 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 08:17:07,649 - watchfiles.main - INFO - 1 change detected
+2025-08-09 08:17:15,900 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 08:17:28,096 - database - INFO - DatabaseManager initialized
+2025-08-09 08:17:28,098 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 08:17:28,156 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 08:18:59,031 - watchfiles.main - INFO - 1 change detected
+2025-08-09 08:19:12,646 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 08:19:22,208 - database - INFO - DatabaseManager initialized
+2025-08-09 08:19:22,209 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 08:19:22,269 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 08:19:39,517 - watchfiles.main - INFO - 1 change detected
+2025-08-09 08:19:40,226 - watchfiles.main - INFO - 1 change detected
+2025-08-09 08:19:42,709 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 08:19:54,005 - database - INFO - DatabaseManager initialized
+2025-08-09 08:19:54,005 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 08:19:54,012 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 08:22:16,020 - watchfiles.main - INFO - 1 change detected
+2025-08-09 08:22:19,419 - watchfiles.main - INFO - 1 change detected
+2025-08-09 08:22:26,127 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 08:22:36,739 - database - INFO - DatabaseManager initialized
+2025-08-09 08:22:36,741 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 08:22:36,794 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 08:23:38,436 - watchfiles.main - INFO - 1 change detected
+2025-08-09 08:23:50,295 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 08:24:02,014 - database - INFO - DatabaseManager initialized
+2025-08-09 08:24:02,015 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 08:24:02,058 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 08:26:08,354 - watchfiles.main - INFO - 1 change detected
+2025-08-09 08:26:16,434 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 08:26:30,130 - database - INFO - DatabaseManager initialized
+2025-08-09 08:26:30,131 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 08:26:30,166 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 09:12:45,397 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 09:12:55,720 - database - INFO - DatabaseManager initialized
+2025-08-09 09:12:55,720 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 09:12:55,766 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 09:15:55,388 - watchfiles.main - INFO - 2 changes detected
+2025-08-09 09:15:55,742 - watchfiles.main - INFO - 1 change detected
+2025-08-09 09:16:10,334 - watchfiles.main - INFO - 3 changes detected
+2025-08-09 09:18:23,727 - watchfiles.main - INFO - 2 changes detected
+2025-08-09 09:18:41,125 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 09:18:55,649 - database - INFO - DatabaseManager initialized
+2025-08-09 09:18:55,652 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 09:18:55,698 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 09:19:04,997 - database - INFO - DatabaseManager initialized
+2025-08-09 09:19:05,017 - database - INFO - Retrieved 3 entities (page 1/1)
+2025-08-09 09:19:05,021 - routers.entities - INFO - Retrieved 3 entities for page 1
+2025-08-09 09:19:16,041 - database - INFO - DatabaseManager initialized
+2025-08-09 09:19:16,051 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:19:16,062 - database - INFO - DatabaseManager initialized
+2025-08-09 09:19:16,074 - database - INFO - Retrieved 3 entities (page 1/1)
+2025-08-09 09:19:16,075 - routers.entities - INFO - Retrieved 3 entities for page 1
+2025-08-09 09:19:18,852 - database - INFO - DatabaseManager initialized
+2025-08-09 09:19:18,856 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:19:18,863 - database - INFO - DatabaseManager initialized
+2025-08-09 09:19:18,866 - database - INFO - Retrieved 3 entities (page 1/1)
+2025-08-09 09:19:18,868 - routers.entities - INFO - Retrieved 3 entities for page 1
+2025-08-09 09:19:35,588 - database - INFO - DatabaseManager initialized
+2025-08-09 09:19:35,611 - database - INFO - Successfully removed entity RRRRR HHJH from map 1041
+2025-08-09 09:19:35,612 - routers.entities - INFO - Entity 'RRRRR HHJH' removed from map 1041 by admin
+2025-08-09 09:19:38,914 - database - INFO - DatabaseManager initialized
+2025-08-09 09:19:38,919 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:19:38,925 - database - INFO - DatabaseManager initialized
+2025-08-09 09:19:38,928 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:19:38,929 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:19:59,338 - database - INFO - DatabaseManager initialized
+2025-08-09 09:19:59,342 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:19:59,351 - database - INFO - DatabaseManager initialized
+2025-08-09 09:19:59,354 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:19:59,357 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:20:02,839 - database - INFO - DatabaseManager initialized
+2025-08-09 09:20:02,844 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:20:02,853 - database - INFO - DatabaseManager initialized
+2025-08-09 09:20:02,855 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:20:02,858 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:20:06,181 - database - INFO - DatabaseManager initialized
+2025-08-09 09:20:06,197 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:20:06,205 - database - INFO - DatabaseManager initialized
+2025-08-09 09:20:06,207 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:20:06,209 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:20:15,697 - database - INFO - DatabaseManager initialized
+2025-08-09 09:20:15,706 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 09:20:15,707 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 09:20:19,461 - database - INFO - DatabaseManager initialized
+2025-08-09 09:20:19,475 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:20:19,482 - database - INFO - DatabaseManager initialized
+2025-08-09 09:20:19,490 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:20:19,491 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:20:26,231 - database - INFO - DatabaseManager initialized
+2025-08-09 09:20:26,235 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 09:20:26,237 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 09:20:28,470 - database - INFO - DatabaseManager initialized
+2025-08-09 09:20:28,472 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:20:28,478 - database - INFO - DatabaseManager initialized
+2025-08-09 09:20:28,479 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:20:28,481 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:20:38,217 - database - INFO - DatabaseManager initialized
+2025-08-09 09:20:38,221 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 09:20:38,223 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 09:20:40,593 - database - INFO - DatabaseManager initialized
+2025-08-09 09:20:40,597 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:20:40,605 - database - INFO - DatabaseManager initialized
+2025-08-09 09:20:40,607 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:20:40,608 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:20:46,464 - database - INFO - DatabaseManager initialized
+2025-08-09 09:20:46,468 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 09:20:46,470 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 09:20:50,135 - database - INFO - DatabaseManager initialized
+2025-08-09 09:20:50,142 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:20:50,150 - database - INFO - DatabaseManager initialized
+2025-08-09 09:20:50,152 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:20:50,154 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:20:53,060 - database - INFO - DatabaseManager initialized
+2025-08-09 09:20:53,064 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 09:20:53,066 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 09:31:45,974 - watchfiles.main - INFO - 1 change detected
+2025-08-09 09:32:04,147 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 09:32:18,876 - database - INFO - DatabaseManager initialized
+2025-08-09 09:32:18,877 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 09:32:18,928 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 09:32:23,415 - database - INFO - DatabaseManager initialized
+2025-08-09 09:32:23,426 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 09:32:23,428 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 09:32:25,499 - database - INFO - DatabaseManager initialized
+2025-08-09 09:32:25,504 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:32:25,514 - database - INFO - DatabaseManager initialized
+2025-08-09 09:32:25,532 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:32:25,533 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:38:45,531 - database - INFO - DatabaseManager initialized
+2025-08-09 09:38:45,583 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 09:38:45,584 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 09:38:47,445 - database - INFO - DatabaseManager initialized
+2025-08-09 09:38:47,465 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:38:47,473 - database - INFO - DatabaseManager initialized
+2025-08-09 09:38:47,485 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:38:47,486 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:38:56,103 - database - INFO - DatabaseManager initialized
+2025-08-09 09:38:56,116 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:38:56,118 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:38:58,763 - database - INFO - DatabaseManager initialized
+2025-08-09 09:38:58,768 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:38:58,779 - database - INFO - DatabaseManager initialized
+2025-08-09 09:38:58,790 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:38:58,792 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:42:35,532 - database - INFO - DatabaseManager initialized
+2025-08-09 09:42:35,560 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:42:35,561 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:42:37,652 - database - INFO - DatabaseManager initialized
+2025-08-09 09:42:37,663 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:42:37,674 - database - INFO - DatabaseManager initialized
+2025-08-09 09:42:37,686 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:42:37,687 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:50:03,914 - watchfiles.main - INFO - 1 change detected
+2025-08-09 09:50:17,880 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 09:50:32,152 - database - INFO - DatabaseManager initialized
+2025-08-09 09:50:32,153 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 09:50:32,204 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 09:50:35,193 - database - INFO - DatabaseManager initialized
+2025-08-09 09:50:35,204 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 09:50:35,205 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 09:50:38,395 - database - INFO - DatabaseManager initialized
+2025-08-09 09:50:38,402 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:50:38,412 - database - INFO - DatabaseManager initialized
+2025-08-09 09:50:38,422 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:50:38,423 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:54:14,695 - database - INFO - DatabaseManager initialized
+2025-08-09 09:54:14,751 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 09:54:14,754 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 09:54:16,674 - database - INFO - DatabaseManager initialized
+2025-08-09 09:54:16,682 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:54:16,691 - database - INFO - DatabaseManager initialized
+2025-08-09 09:54:16,701 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:54:16,703 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:54:27,343 - database - INFO - DatabaseManager initialized
+2025-08-09 09:54:27,349 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:54:27,350 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:54:29,594 - database - INFO - DatabaseManager initialized
+2025-08-09 09:54:29,602 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:54:29,616 - database - INFO - DatabaseManager initialized
+2025-08-09 09:54:29,618 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:54:29,620 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:54:31,752 - database - INFO - DatabaseManager initialized
+2025-08-09 09:54:31,756 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:54:31,759 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:54:38,627 - database - INFO - DatabaseManager initialized
+2025-08-09 09:54:38,635 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 09:54:38,637 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 09:55:31,139 - database - INFO - DatabaseManager initialized
+2025-08-09 09:55:31,151 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 09:55:31,153 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 09:55:37,330 - database - INFO - DatabaseManager initialized
+2025-08-09 09:55:37,334 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 09:55:37,336 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 09:55:44,993 - database - INFO - DatabaseManager initialized
+2025-08-09 09:55:45,001 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:55:45,010 - database - INFO - DatabaseManager initialized
+2025-08-09 09:55:45,023 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:55:45,025 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:55:49,626 - database - INFO - DatabaseManager initialized
+2025-08-09 09:55:49,630 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 09:55:49,632 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 09:55:54,336 - database - INFO - DatabaseManager initialized
+2025-08-09 09:55:54,340 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:55:54,348 - database - INFO - DatabaseManager initialized
+2025-08-09 09:55:54,350 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:55:54,351 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:58:10,761 - database - INFO - DatabaseManager initialized
+2025-08-09 09:58:10,818 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 09:58:10,820 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 09:58:17,715 - database - INFO - DatabaseManager initialized
+2025-08-09 09:58:17,722 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:58:17,735 - database - INFO - DatabaseManager initialized
+2025-08-09 09:58:17,743 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:58:17,744 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:58:47,558 - database - INFO - DatabaseManager initialized
+2025-08-09 09:58:47,571 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 09:58:47,573 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 09:58:51,831 - database - INFO - DatabaseManager initialized
+2025-08-09 09:58:51,842 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:58:51,852 - database - INFO - DatabaseManager initialized
+2025-08-09 09:58:51,865 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:58:51,866 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:58:54,511 - database - INFO - DatabaseManager initialized
+2025-08-09 09:58:54,514 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 09:58:54,515 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 09:58:58,513 - database - INFO - DatabaseManager initialized
+2025-08-09 09:58:58,517 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 09:58:58,536 - database - INFO - DatabaseManager initialized
+2025-08-09 09:58:58,541 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 09:58:58,543 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 09:59:33,269 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 09:59:42,390 - database - INFO - DatabaseManager initialized
+2025-08-09 09:59:42,391 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 09:59:42,396 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 10:39:32,302 - watchfiles.main - INFO - 1 change detected
+2025-08-09 10:39:41,692 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 10:45:15,085 - watchfiles.main - INFO - 1 change detected
+2025-08-09 10:45:43,950 - database - INFO - DatabaseManager initialized
+2025-08-09 10:45:43,951 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 10:45:43,988 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 10:45:48,688 - database - INFO - DatabaseManager initialized
+2025-08-09 10:45:48,701 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 10:45:48,705 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 10:45:51,912 - database - INFO - DatabaseManager initialized
+2025-08-09 10:45:51,920 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 10:45:51,929 - database - INFO - DatabaseManager initialized
+2025-08-09 10:45:51,943 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 10:45:51,946 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 10:46:02,231 - database - INFO - DatabaseManager initialized
+2025-08-09 10:46:02,242 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 10:46:02,244 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 10:46:04,602 - database - INFO - DatabaseManager initialized
+2025-08-09 10:46:04,605 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 10:46:04,615 - database - INFO - DatabaseManager initialized
+2025-08-09 10:46:04,618 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 10:46:04,620 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 10:47:35,317 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 10:47:50,646 - database - INFO - DatabaseManager initialized
+2025-08-09 10:47:50,647 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 10:47:50,703 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 10:47:53,988 - database - INFO - DatabaseManager initialized
+2025-08-09 10:47:53,999 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 10:47:54,002 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 10:47:58,632 - database - INFO - DatabaseManager initialized
+2025-08-09 10:47:58,638 - routers.maps - INFO - Retrieved map 1394-A
+2025-08-09 10:47:58,643 - database - INFO - DatabaseManager initialized
+2025-08-09 10:47:58,655 - database - INFO - Retrieved 0 entities (page 1/0)
+2025-08-09 10:47:58,659 - routers.entities - INFO - Retrieved 0 entities for page 1
+2025-08-09 10:54:24,347 - watchfiles.main - INFO - 1 change detected
+2025-08-09 10:54:25,512 - watchfiles.main - INFO - 1 change detected
+2025-08-09 10:54:43,421 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 10:54:59,585 - database - INFO - DatabaseManager initialized
+2025-08-09 10:54:59,587 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 10:54:59,642 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 10:55:03,053 - database - INFO - DatabaseManager initialized
+2025-08-09 10:55:03,068 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 10:55:03,070 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 10:55:05,280 - database - INFO - DatabaseManager initialized
+2025-08-09 10:55:05,286 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 10:55:05,295 - database - INFO - DatabaseManager initialized
+2025-08-09 10:55:05,305 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 10:55:05,307 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 10:55:13,858 - database - INFO - DatabaseManager initialized
+2025-08-09 10:55:13,862 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 10:55:13,865 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 10:55:16,237 - database - INFO - DatabaseManager initialized
+2025-08-09 10:55:16,243 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 10:55:16,251 - database - INFO - DatabaseManager initialized
+2025-08-09 10:55:16,254 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 10:55:16,255 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 10:55:19,457 - database - INFO - DatabaseManager initialized
+2025-08-09 10:55:19,466 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 10:55:19,467 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 10:57:14,726 - database - INFO - DatabaseManager initialized
+2025-08-09 10:57:14,780 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 10:57:14,782 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 10:57:21,794 - database - INFO - DatabaseManager initialized
+2025-08-09 10:57:21,801 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 10:57:21,816 - database - INFO - DatabaseManager initialized
+2025-08-09 10:57:21,829 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 10:57:21,831 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 11:00:49,538 - watchfiles.main - INFO - 1 change detected
+2025-08-09 11:00:56,369 - watchfiles.main - INFO - 1 change detected
+2025-08-09 11:01:23,172 - watchfiles.main - INFO - 1 change detected
+2025-08-09 11:01:52,528 - watchfiles.main - INFO - 1 change detected
+2025-08-09 11:01:54,569 - watchfiles.main - INFO - 1 change detected
+2025-08-09 11:02:03,345 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 11:02:17,565 - database - INFO - DatabaseManager initialized
+2025-08-09 11:02:17,608 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 11:02:17,611 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 11:02:19,706 - database - INFO - DatabaseManager initialized
+2025-08-09 11:02:19,713 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 11:02:19,723 - database - INFO - DatabaseManager initialized
+2025-08-09 11:02:19,733 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 11:02:19,734 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 11:02:22,409 - database - INFO - DatabaseManager initialized
+2025-08-09 11:02:22,415 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 11:02:22,418 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 11:02:24,440 - database - INFO - DatabaseManager initialized
+2025-08-09 11:02:24,444 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 11:02:24,452 - database - INFO - DatabaseManager initialized
+2025-08-09 11:02:24,455 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 11:02:24,456 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 11:02:40,166 - database - INFO - DatabaseManager initialized
+2025-08-09 11:02:40,166 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 11:02:40,171 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 11:02:44,071 - database - INFO - DatabaseManager initialized
+2025-08-09 11:02:44,075 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 11:02:44,077 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 11:02:46,034 - database - INFO - DatabaseManager initialized
+2025-08-09 11:02:46,038 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 11:02:46,047 - database - INFO - DatabaseManager initialized
+2025-08-09 11:02:46,050 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 11:02:46,051 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 11:02:48,832 - database - INFO - DatabaseManager initialized
+2025-08-09 11:02:48,836 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 11:02:48,839 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 11:02:50,674 - database - INFO - DatabaseManager initialized
+2025-08-09 11:02:50,679 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 11:02:50,690 - database - INFO - DatabaseManager initialized
+2025-08-09 11:02:50,693 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 11:02:50,695 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 11:03:00,303 - database - INFO - DatabaseManager initialized
+2025-08-09 11:03:00,316 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 11:03:00,319 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 11:03:02,446 - database - INFO - DatabaseManager initialized
+2025-08-09 11:03:02,450 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 11:03:02,463 - database - INFO - DatabaseManager initialized
+2025-08-09 11:03:02,467 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 11:03:02,468 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 11:03:04,582 - database - INFO - DatabaseManager initialized
+2025-08-09 11:03:04,585 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 11:03:04,587 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 11:03:06,863 - database - INFO - DatabaseManager initialized
+2025-08-09 11:03:06,867 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 11:03:06,876 - database - INFO - DatabaseManager initialized
+2025-08-09 11:03:06,879 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 11:03:06,881 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 11:04:14,507 - session_manager - INFO - Session cleared for user: admin
+2025-08-09 11:13:33,199 - watchfiles.main - INFO - 1 change detected
+2025-08-09 11:13:33,411 - main - INFO - Shutting down Beisman Maps Application...
+2025-08-09 11:13:33,951 - watchfiles.main - INFO - 1 change detected
+2025-08-09 11:13:35,013 - watchfiles.main - INFO - 1 change detected
+2025-08-09 11:13:35,016 - main - INFO - Starting Beisman Maps Application...
+2025-08-09 11:13:35,017 - database - INFO - DatabaseManager initialized
+2025-08-09 11:13:35,113 - database - INFO - Database connection test successful
+2025-08-09 11:13:41,456 - watchfiles.main - INFO - 2 changes detected
+2025-08-09 11:13:41,666 - main - INFO - Shutting down Beisman Maps Application...
+2025-08-09 11:13:42,201 - watchfiles.main - INFO - 1 change detected
+2025-08-09 11:14:36,635 - watchfiles.main - INFO - 1 change detected
+2025-08-09 11:14:37,768 - watchfiles.main - INFO - 1 change detected
+2025-08-09 11:14:37,838 - main - INFO - Starting Beisman Maps Application...
+2025-08-09 11:14:37,839 - database - INFO - DatabaseManager initialized
+2025-08-09 11:14:37,912 - database - INFO - Database connection test successful
+2025-08-09 11:14:38,121 - watchfiles.main - INFO - 6 changes detected
+2025-08-09 11:21:33,141 - watchfiles.main - INFO - 3 changes detected
+2025-08-09 11:21:34,923 - watchfiles.main - INFO - 2 changes detected
+2025-08-09 11:21:38,603 - watchfiles.main - INFO - 1 change detected
+2025-08-09 11:21:38,967 - watchfiles.main - INFO - 1 change detected
+2025-08-09 11:25:07,265 - watchfiles.main - INFO - 1 change detected
+2025-08-09 11:30:36,252 - watchfiles.main - INFO - 2 changes detected
+2025-08-09 11:30:40,682 - watchfiles.main - INFO - 2 changes detected
+2025-08-09 11:31:07,480 - watchfiles.main - INFO - 3 changes detected
+2025-08-09 11:32:47,875 - watchfiles.main - INFO - 1 change detected
+2025-08-09 11:32:48,993 - watchfiles.main - INFO - 1 change detected
+2025-08-09 11:32:49,010 - watchfiles.main - INFO - 1 change detected
+2025-08-09 11:32:49,109 - main - INFO - Starting Beisman Maps Application...
+2025-08-09 11:32:49,110 - database - INFO - DatabaseManager initialized
+2025-08-09 11:32:49,176 - database - INFO - Database connection test successful
+2025-08-09 11:32:49,349 - watchfiles.main - INFO - 1 change detected
+2025-08-09 11:32:49,367 - watchfiles.main - INFO - 1 change detected
+2025-08-09 12:10:08,480 - watchfiles.main - INFO - 1 change detected
+2025-08-09 12:11:29,670 - main - INFO - Starting Beisman Maps Application...
+2025-08-09 12:11:29,671 - database - INFO - DatabaseManager initialized
+2025-08-09 12:11:29,764 - database - INFO - Database connection test successful
+2025-08-09 12:11:52,514 - database - INFO - DatabaseManager initialized
+2025-08-09 12:11:52,545 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 12:11:52,548 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 12:11:56,878 - database - INFO - DatabaseManager initialized
+2025-08-09 12:11:56,895 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 12:11:56,896 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 12:12:01,853 - database - INFO - DatabaseManager initialized
+2025-08-09 12:12:01,858 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 12:12:01,860 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 12:12:08,126 - database - INFO - DatabaseManager initialized
+2025-08-09 12:12:08,132 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 12:12:08,133 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 12:12:13,792 - database - INFO - DatabaseManager initialized
+2025-08-09 12:12:13,799 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 12:12:13,809 - database - INFO - DatabaseManager initialized
+2025-08-09 12:12:13,827 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 12:12:13,830 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 12:12:19,371 - database - INFO - DatabaseManager initialized
+2025-08-09 12:12:19,383 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 12:12:19,387 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 12:12:22,783 - database - INFO - DatabaseManager initialized
+2025-08-09 12:12:22,792 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 12:12:22,802 - database - INFO - DatabaseManager initialized
+2025-08-09 12:12:22,804 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 12:12:22,805 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 12:12:25,408 - database - INFO - DatabaseManager initialized
+2025-08-09 12:12:25,415 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 12:12:25,418 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 12:12:31,285 - database - INFO - DatabaseManager initialized
+2025-08-09 12:12:31,290 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 12:12:31,294 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 12:12:51,532 - database - INFO - DatabaseManager initialized
+2025-08-09 12:12:51,533 - database - INFO - Valid admin credentials for user: admin
+2025-08-09 12:12:51,541 - routers.auth - INFO - Successful login for user: admin
+2025-08-09 12:12:54,881 - database - INFO - DatabaseManager initialized
+2025-08-09 12:12:54,896 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 12:12:54,897 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 12:12:56,994 - database - INFO - DatabaseManager initialized
+2025-08-09 12:12:57,007 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 12:12:57,020 - database - INFO - DatabaseManager initialized
+2025-08-09 12:12:57,029 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 12:12:57,030 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 12:12:59,571 - database - INFO - DatabaseManager initialized
+2025-08-09 12:12:59,579 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 12:12:59,580 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 12:13:01,424 - database - INFO - DatabaseManager initialized
+2025-08-09 12:13:01,433 - routers.maps - INFO - Retrieved map 1041
+2025-08-09 12:13:01,448 - database - INFO - DatabaseManager initialized
+2025-08-09 12:13:01,450 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-09 12:13:01,451 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-09 12:13:07,266 - database - INFO - DatabaseManager initialized
+2025-08-09 12:13:07,275 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 12:13:07,277 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-09 12:13:09,940 - database - INFO - DatabaseManager initialized
+2025-08-09 12:13:09,953 - routers.maps - INFO - Retrieved map 1370-B
+2025-08-09 12:13:09,962 - database - INFO - DatabaseManager initialized
+2025-08-09 12:13:09,971 - database - INFO - Retrieved 0 entities (page 1/0)
+2025-08-09 12:13:09,972 - routers.entities - INFO - Retrieved 0 entities for page 1
+2025-08-09 12:13:20,550 - database - INFO - DatabaseManager initialized
+2025-08-09 12:13:20,553 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-09 12:13:20,555 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-11 00:31:19,739 - database - INFO - DatabaseManager initialized
+2025-08-11 00:31:19,806 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-11 00:31:19,810 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-11 00:31:31,890 - database - INFO - DatabaseManager initialized
+2025-08-11 00:31:31,905 - database - INFO - Retrieved 1 maps (page 1/1)
+2025-08-11 00:31:31,906 - routers.maps - INFO - Retrieved 1 maps for page 1
+2025-08-11 00:31:35,212 - database - INFO - DatabaseManager initialized
+2025-08-11 00:31:35,224 - routers.maps - INFO - Retrieved map 1041
+2025-08-11 00:31:35,235 - database - INFO - DatabaseManager initialized
+2025-08-11 00:31:35,253 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-11 00:31:35,267 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-11 00:31:38,537 - database - INFO - DatabaseManager initialized
+2025-08-11 00:31:38,543 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-11 00:31:38,545 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-11 00:31:44,876 - database - INFO - DatabaseManager initialized
+2025-08-11 00:31:44,888 - database - INFO - Retrieved 1 maps (page 1/1)
+2025-08-11 00:31:44,892 - routers.maps - INFO - Retrieved 1 maps for page 1
+2025-08-11 00:31:48,928 - database - INFO - DatabaseManager initialized
+2025-08-11 00:31:48,938 - routers.maps - INFO - Retrieved map 1041
+2025-08-11 00:31:48,953 - database - INFO - DatabaseManager initialized
+2025-08-11 00:31:48,967 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-11 00:31:48,969 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-11 00:32:11,975 - database - INFO - DatabaseManager initialized
+2025-08-11 00:32:11,992 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-11 00:32:11,993 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-11 00:32:17,443 - database - INFO - DatabaseManager initialized
+2025-08-11 00:32:17,451 - routers.maps - INFO - Retrieved map 1370-B
+2025-08-11 00:32:17,463 - database - INFO - DatabaseManager initialized
+2025-08-11 00:32:17,474 - database - INFO - Retrieved 0 entities (page 1/0)
+2025-08-11 00:32:17,476 - routers.entities - INFO - Retrieved 0 entities for page 1
+2025-08-11 00:32:33,974 - database - INFO - DatabaseManager initialized
+2025-08-11 00:32:33,986 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-11 00:32:33,991 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-11 00:32:40,825 - database - INFO - DatabaseManager initialized
+2025-08-11 00:32:40,831 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-11 00:32:40,833 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-11 00:32:45,057 - database - INFO - DatabaseManager initialized
+2025-08-11 00:32:45,069 - routers.maps - INFO - Retrieved map 1041
+2025-08-11 00:32:45,078 - database - INFO - DatabaseManager initialized
+2025-08-11 00:32:45,088 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-11 00:32:45,089 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-11 00:32:58,631 - database - INFO - DatabaseManager initialized
+2025-08-11 00:32:58,632 - database - INFO - Valid admin credentials for user: admin
+2025-08-11 00:32:58,642 - routers.auth - INFO - Successful login for user: admin
+2025-08-11 00:33:06,227 - database - INFO - DatabaseManager initialized
+2025-08-11 00:33:06,233 - database - INFO - Retrieved 10 maps (page 1/2)
+2025-08-11 00:33:06,234 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-11 00:33:09,230 - database - INFO - DatabaseManager initialized
+2025-08-11 00:33:09,239 - routers.maps - INFO - Retrieved map 1041
+2025-08-11 00:33:09,248 - database - INFO - DatabaseManager initialized
+2025-08-11 00:33:09,267 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-11 00:33:09,269 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-11 00:33:43,680 - database - INFO - DatabaseManager initialized
+2025-08-11 00:33:43,701 - routers.maps - INFO - Retrieved map 1041
+2025-08-11 00:33:43,709 - database - INFO - DatabaseManager initialized
+2025-08-11 00:33:43,710 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-11 00:33:43,711 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-11 00:34:00,563 - database - INFO - DatabaseManager initialized
+2025-08-11 00:34:00,572 - database - INFO - Successfully added entity RRRRR HHJH to map 1041
+2025-08-11 00:34:00,574 - routers.entities - INFO - Entity 'RRRRR HHJH' added to map 1041 by admin
+2025-08-11 00:34:02,508 - database - INFO - DatabaseManager initialized
+2025-08-11 00:34:02,520 - routers.maps - INFO - Retrieved map 1041
+2025-08-11 00:34:02,527 - database - INFO - DatabaseManager initialized
+2025-08-11 00:34:02,540 - database - INFO - Retrieved 3 entities (page 1/1)
+2025-08-11 00:34:02,541 - routers.entities - INFO - Retrieved 3 entities for page 1
+2025-08-11 00:34:19,985 - database - INFO - DatabaseManager initialized
+2025-08-11 00:34:20,004 - database - INFO - Successfully removed entity RRRRR HHJH from map 1041
+2025-08-11 00:34:20,006 - routers.entities - INFO - Entity 'RRRRR HHJH' removed from map 1041 by admin
+2025-08-11 00:34:22,138 - database - INFO - DatabaseManager initialized
+2025-08-11 00:34:22,146 - routers.maps - INFO - Retrieved map 1041
+2025-08-11 00:34:22,155 - database - INFO - DatabaseManager initialized
+2025-08-11 00:34:22,166 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-11 00:34:22,168 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-11 00:34:33,581 - database - INFO - DatabaseManager initialized
+2025-08-11 00:34:33,585 - routers.maps - INFO - Retrieved map 1041
+2025-08-11 00:34:33,595 - database - INFO - DatabaseManager initialized
+2025-08-11 00:34:33,600 - database - INFO - Retrieved 2 entities (page 1/1)
+2025-08-11 00:34:33,601 - routers.entities - INFO - Retrieved 2 entities for page 1
+2025-08-11 04:22:43,738 - database - INFO - DatabaseManager initialized
+2025-08-11 04:22:53,131 - database - INFO - DatabaseManager initialized
+2025-08-11 04:22:53,147 - database - INFO - Retrieved 10 maps (page 1/510)
+2025-08-11 04:22:53,148 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-11 04:22:55,983 - database - INFO - DatabaseManager initialized
+2025-08-11 04:22:55,995 - routers.maps - INFO - Retrieved map 003-A
+2025-08-11 04:22:56,010 - database - INFO - DatabaseManager initialized
+2025-08-11 04:22:56,023 - database - INFO - Retrieved 0 entities (page 1/0)
+2025-08-11 04:22:56,024 - routers.entities - INFO - Retrieved 0 entities for page 1
+2025-08-11 04:23:09,424 - database - INFO - DatabaseManager initialized
+2025-08-11 04:23:09,435 - database - INFO - Retrieved 10 maps (page 1/510)
+2025-08-11 04:23:09,441 - routers.maps - INFO - Retrieved 10 maps for page 1
+2025-08-11 04:23:11,338 - database - INFO - DatabaseManager initialized
+2025-08-11 04:23:11,349 - routers.maps - INFO - Retrieved map 003-A
+2025-08-11 04:23:11,357 - database - INFO - DatabaseManager initialized
+2025-08-11 04:23:11,359 - database - INFO - Retrieved 0 entities (page 1/0)
+2025-08-11 04:23:11,360 - routers.entities - INFO - Retrieved 0 entities for page 1
+2025-08-11 04:23:15,863 - database - INFO - DatabaseManager initialized
+2025-08-11 04:23:15,868 - routers.maps - INFO - Retrieved map 003-A
+2025-08-11 04:23:15,886 - database - INFO - DatabaseManager initialized
+2025-08-11 04:23:15,888 - database - INFO - Retrieved 0 entities (page 1/0)
+2025-08-11 04:23:15,890 - routers.entities - INFO - Retrieved 0 entities for page 1
+2025-08-11 04:23:33,924 - main - WARNING - Validation error on http://localhost:8000/api/entities/map/003-A/add?entity_name=Test%20Delete%20Me: [{'type': 'int_parsing', 'loc': ('path', 'map_number'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': '003-A', 'url': 'https://errors.pydantic.dev/2.11/v/int_parsing'}]
+2025-08-11 04:23:45,422 - main - WARNING - Validation error on http://localhost:8000/api/entities/map/003-A/add?entity_name=Hi: [{'type': 'int_parsing', 'loc': ('path', 'map_number'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': '003-A', 'url': 'https://errors.pydantic.dev/2.11/v/int_parsing'}]
+2025-08-11 04:23:51,357 - main - WARNING - Validation error on http://localhost:8000/api/maps/003-A: [{'type': 'int_parsing', 'loc': ('path', 'map_number'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': '003-A', 'url': 'https://errors.pydantic.dev/2.11/v/int_parsing'}]
+2025-08-11 04:29:47,025 - watchfiles.main - INFO - 2 changes detected
+2025-08-11 04:29:47,220 - main - INFO - Shutting down Beisman Maps Application...
+2025-08-11 04:29:47,916 - watchfiles.main - INFO - 1 change detected
+2025-08-11 04:29:51,114 - watchfiles.main - INFO - 1 change detected
+2025-08-11 04:29:51,322 - main - INFO - Starting Beisman Maps Application...
+2025-08-11 04:29:51,322 - database - INFO - DatabaseManager initialized
+2025-08-11 04:29:51,467 - watchfiles.main - INFO - 1 change detected
+2025-08-11 04:29:51,573 - database - INFO - Database connection test successful
+2025-08-11 04:29:55,235 - watchfiles.main - INFO - 3 changes detected
+2025-08-11 04:29:55,468 - main - INFO - Shutting down Beisman Maps Application...
+2025-08-11 04:29:56,072 - watchfiles.main - INFO - 1 change detected
+2025-08-11 04:30:02,329 - watchfiles.main - INFO - 3 changes detected
+2025-08-11 04:30:03,662 - watchfiles.main - INFO - 5 changes detected
+2025-08-11 04:30:03,784 - main - INFO - Starting Beisman Maps Application...
+2025-08-11 04:30:03,785 - database - INFO - DatabaseManager initialized
+2025-08-11 04:30:03,921 - database - INFO - Database connection test successful
+2025-08-11 04:30:04,015 - watchfiles.main - INFO - 1 change detected
+2025-08-11 04:31:02,601 - watchfiles.main - INFO - 3 changes detected
+2025-08-11 04:31:49,093 - main - INFO - Shutting down Beisman Maps Application...
+2025-08-11 04:31:49,737 - watchfiles.main - INFO - 1 change detected
+2025-08-11 04:32:21,802 - watchfiles.main - INFO - 3 changes detected
