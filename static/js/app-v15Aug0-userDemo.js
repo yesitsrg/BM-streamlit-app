@@ -31,7 +31,6 @@ class BeismanMapApp {
                 // Restore state from history
                 this.currentPage = event.state.page;
                 this.selectedMapId = event.state.selectedMapId;
-                this.selectedEntityInfo = event.state.selectedEntityInfo;
                 console.log(`📍 Restoring page: ${this.currentPage}`);
                 this.updatePageTitle();
                 this.loadCurrentPage();
@@ -67,14 +66,6 @@ class BeismanMapApp {
             if (mapId) {
                 this.selectedMapId = mapId;
             }
-        } else if (path.startsWith('/entity-details/')) {
-            this.currentPage = 'entity-details';
-            // Extract entity info from URL
-            const entityInfo = path.split('/entity-details/')[1];
-            if (entityInfo) {
-                // Handle both entity ID and entity name formats
-                this.selectedEntityInfo = decodeURIComponent(entityInfo);
-            }
         } else {
             // Unknown route, default to home
             this.currentPage = 'home';
@@ -85,7 +76,7 @@ class BeismanMapApp {
     }
 
     // NEW: Update browser URL and history
-    updateBrowserHistory(page, selectedMapId = null, selectedEntityInfo = null) {
+    updateBrowserHistory(page, selectedMapId = null) {
         // Map application pages to URL paths
         const urlPaths = {
             'home': '/',
@@ -94,15 +85,13 @@ class BeismanMapApp {
             'browse-entities': '/browse-entities',
             'insert-map': '/insert-map',
             'update-delete': '/update-delete',
-            'map-details': selectedMapId ? `/map-details/${selectedMapId}` : '/map-details',
-            'entity-details': selectedEntityInfo ? `/entity-details/${encodeURIComponent(selectedEntityInfo)}` : '/entity-details'
+            'map-details': selectedMapId ? `/map-details/${selectedMapId}` : '/map-details'
         };
 
         const newPath = urlPaths[page] || '/';
         const state = {
             page: page,
-            selectedMapId: selectedMapId,
-            selectedEntityInfo: selectedEntityInfo
+            selectedMapId: selectedMapId
         };
 
         // Only update if the path is different
@@ -309,7 +298,7 @@ class BeismanMapApp {
         this.currentPage = page;
         
         // NEW: Update browser history and URL
-        this.updateBrowserHistory(page, this.selectedMapId, this.selectedEntityInfo);
+        this.updateBrowserHistory(page, this.selectedMapId);
         
         this.updatePageTitle();
         this.loadCurrentPage();
@@ -333,7 +322,6 @@ class BeismanMapApp {
             'browse-maps': 'Browse Beisman Maps',
             'browse-entities': 'Browse Beisman Entities',
             'map-details': 'Map Information',
-            'entity-details': 'Entity Information',
             'insert-map': 'Insert New Map',
             'update-delete': 'Update/Delete Map'
         };
@@ -364,9 +352,6 @@ class BeismanMapApp {
                 break;
             case 'map-details':
                 this.loadMapDetails(contentArea);
-                break;
-            case 'entity-details':
-                this.loadEntityDetails(contentArea);
                 break;
             case 'insert-map':
                 this.loadInsertMap(contentArea);
@@ -1023,7 +1008,7 @@ class BeismanMapApp {
             ${entities.map(entity => `
                 <div class="browse-row">
                     <div style="flex: 1;">
-                        <a href="#" class="nav-link" onclick="beismanApp.showEntityDetails('${entity.EntityName}', '${entity.BeismanNumber}'); return false;">Details</a>
+                        <a href="#" class="nav-link" onclick="beismanApp.showMapDetails(${entity.BeismanNumber}); return false;">Details</a>
                     </div>
                     <div style="flex: 4;">${entity.EntityName || ''}</div>
                     <div style="flex: 2;">${entity.BeismanNumber || ''}</div>
@@ -1046,179 +1031,6 @@ class BeismanMapApp {
         }
         
         return buttons;
-    }
-
-    // NEW: Show entity details
-    showEntityDetails(entityName, beismanNumber) {
-        this.selectedEntityInfo = `${entityName}|${beismanNumber}`;
-        this.navigateTo('entity-details');
-    }
-
-    // NEW: Load entity details page
-    loadEntityDetails(container) {
-        if (!this.selectedEntityInfo) {
-            container.innerHTML = `
-                <div class="page-content">
-                    <a href="#" class="back-button" onclick="beismanApp.navigateTo('browse-entities'); return false;">← Back to Browse Entities</a>
-                    <div class="status-message warning">No entity selected. Please go back and select an entity.</div>
-                </div>
-            `;
-            return;
-        }
-
-        // Parse entity info
-        const [entityName, beismanNumber] = this.selectedEntityInfo.split('|');
-        const homeDestination = this.currentUser?.isAdmin ? 'admin-panel' : 'home';
-        
-        container.innerHTML = `
-            <div class="page-content">
-                <div id="entity-details-content">Loading entity details...</div>
-                
-                <div class="bottom-navigation">
-                    <div class="nav-row">
-                        <a href="#" class="nav-link" onclick="beismanApp.navigateTo('${homeDestination}'); return false;">Home</a>
-                        <a href="#" class="nav-link" onclick="beismanApp.navigateTo('browse-entities'); return false;">← Back to Browse Entities</a>
-                        <a href="#" class="nav-link" onclick="beismanApp.navigateTo('browse-maps'); return false;">Browse Maps</a>
-                        <a href="#" class="nav-link" onclick="beismanApp.showMapDetails('${beismanNumber}'); return false;">View Associated Map</a>
-                        ${this.currentUser?.isAdmin ? `
-                            <a href="#" class="nav-link" onclick="beismanApp.navigateTo('insert-map'); return false;">Insert Map</a>
-                        ` : ''}
-                    </div>
-                </div>
-            </div>
-        `;
-
-        this.loadEntityDetailsData(entityName, beismanNumber);
-    }
-
-    // NEW: Load entity details data
-    async loadEntityDetailsData(entityName, beismanNumber) {
-        try {
-            const detailsContent = document.getElementById('entity-details-content');
-            if (detailsContent) {
-                detailsContent.innerHTML = `
-                    <hr>
-                    <div class="entity-details">
-                        <div class="detail-row">
-                            <strong>Entity Name:</strong> ${entityName || 'N/A'}
-                        </div>
-                        <div class="detail-row">
-                            <strong>Associated Map Number:</strong> 
-                            <a href="#" class="nav-link" onclick="beismanApp.showMapDetails('${beismanNumber}'); return false;">${beismanNumber || 'N/A'}</a>
-                        </div>
-                        <div class="detail-row">
-                            <strong>Entity Type:</strong> Client/Entity
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="map-preview-section">
-                        <strong>Associated Map Information:</strong>
-                        <div id="map-preview-content">Loading map information...</div>
-                    </div>
-                    <hr>
-                    <div class="related-entities-section">
-                        <strong>Other Entities on Same Map:</strong>
-                        <div id="related-entities-list">Loading related entities...</div>
-                    </div>
-                    <hr>
-                `;
-                
-                this.loadMapPreviewForEntity(beismanNumber);
-                this.loadRelatedEntitiesForEntity(beismanNumber, entityName);
-            }
-        } catch (error) {
-            console.error('❌ Error loading entity details:', error);
-            const detailsContent = document.getElementById('entity-details-content');
-            if (detailsContent) {
-                detailsContent.innerHTML = '<div class="status-message error">Failed to load entity details.</div>';
-            }
-        }
-    }
-
-    // NEW: Load map preview for entity details
-    async loadMapPreviewForEntity(beismanNumber) {
-        try {
-            const response = await fetch(`/api/maps/${beismanNumber}`, {
-                credentials: 'include'
-            });
-
-            const mapPreviewContent = document.getElementById('map-preview-content');
-            if (!mapPreviewContent) return;
-
-            if (!response.ok) {
-                mapPreviewContent.innerHTML = '<div class="status-message info">No map information available.</div>';
-                return;
-            }
-
-            const mapData = await response.json();
-            
-            mapPreviewContent.innerHTML = `
-                <div class="map-preview">
-                    <div class="detail-row">
-                        <strong>Map Number:</strong> ${mapData.Number || 'N/A'}
-                    </div>
-                    <div class="detail-row">
-                        <strong>Drawer:</strong> ${mapData.Drawer || 'N/A'}
-                    </div>
-                    <div class="detail-row">
-                        <strong>Description:</strong> ${mapData.PropertyDetails || 'N/A'}
-                    </div>
-                    <div class="detail-row">
-                        <a href="#" class="nav-link" onclick="beismanApp.showMapDetails('${beismanNumber}'); return false;">→ View Full Map Details</a>
-                    </div>
-                </div>
-            `;
-        } catch (error) {
-            console.error('❌ Error loading map preview:', error);
-            const mapPreviewContent = document.getElementById('map-preview-content');
-            if (mapPreviewContent) {
-                mapPreviewContent.innerHTML = '<div class="status-message error">Failed to load map information.</div>';
-            }
-        }
-    }
-
-    // NEW: Load related entities for entity details
-    async loadRelatedEntitiesForEntity(beismanNumber, currentEntityName) {
-        try {
-            const response = await fetch(`/api/entities?search=${beismanNumber}`, {
-                credentials: 'include'
-            });
-
-            const relatedEntitiesList = document.getElementById('related-entities-list');
-            if (!relatedEntitiesList) return;
-
-            if (!response.ok) {
-                relatedEntitiesList.innerHTML = '<div class="status-message info">No related entities found.</div>';
-                return;
-            }
-
-            const entitiesData = await response.json();
-            
-            if (entitiesData.data && entitiesData.data.length > 0) {
-                // Filter out the current entity and show others
-                const otherEntities = entitiesData.data.filter(entity => 
-                    entity.EntityName !== currentEntityName
-                );
-                
-                if (otherEntities.length > 0) {
-                    relatedEntitiesList.innerHTML = otherEntities.map(entity => `
-                        <div class="entity-item">
-                            <a href="#" class="nav-link" onclick="beismanApp.showEntityDetails('${entity.EntityName}', '${entity.BeismanNumber}'); return false;">${entity.EntityName}</a>
-                        </div>
-                    `).join('');
-                } else {
-                    relatedEntitiesList.innerHTML = '<div class="status-message info">No other entities associated with this map.</div>';
-                }
-            } else {
-                relatedEntitiesList.innerHTML = '<div class="status-message info">No related entities found.</div>';
-            }
-        } catch (error) {
-            console.error('❌ Error loading related entities:', error);
-            const relatedEntitiesList = document.getElementById('related-entities-list');
-            if (relatedEntitiesList) {
-                relatedEntitiesList.innerHTML = '<div class="status-message error">Failed to load related entities.</div>';
-            }
-        }
     }
 
     // UPDATED: Now includes URL update
