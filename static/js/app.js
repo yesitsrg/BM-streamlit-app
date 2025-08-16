@@ -657,12 +657,16 @@ class BeismanMapApp {
             return;
         }
 
+        // Initialize temporary entities list
+        this.tempEntitiesList = [];
+
         container.innerHTML = `
             <div class="page-content">
                 <a href="#" class="back-button" onclick="beismanApp.navigateTo('admin-panel'); return false;">← Back to Admin Panel</a>
                 <hr>
                 
                 <div class="form-container">
+                    <div class="form-header">Insert New Map</div>
                     <form id="insert-map-form">
                         <div class="form-group">
                             <label for="trace-number">Trace Number:</label>
@@ -678,10 +682,34 @@ class BeismanMapApp {
                         </div>
                         <hr>
                         <div class="form-actions">
-                            <button type="submit" class="windows-button primary">Insert</button>
+                            <button type="submit" class="windows-button primary">Insert Map & Entities</button>
                             <button type="button" class="windows-button" onclick="beismanApp.navigateTo('admin-panel')">Cancel</button>
                         </div>
                     </form>
+                </div>
+
+                <hr>
+
+                <div class="entities-section">
+                    <div class="form-container" style="margin-top: 20px;">
+                        <div class="form-header">Add Entities to This Map (Optional)</div>
+                        <div class="form-row" style="display: flex; gap: 12px; align-items: end;">
+                            <div class="form-group" style="flex: 1;">
+                                <label for="new-entity-name">Entity Name:</label>
+                                <input type="text" id="new-entity-name" class="windows-input" placeholder="Enter entity name">
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="windows-button" onclick="beismanApp.addTempEntity()">Add Entity</button>
+                            </div>
+                        </div>
+                        
+                        <div class="entities-list-section" style="margin-top: 20px;">
+                            <h4>Entities to be Added:</h4>
+                            <div id="temp-entities-list">
+                                <div class="status-message info">No entities added yet. Add entities above or insert map without entities.</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         `;
@@ -690,7 +718,7 @@ class BeismanMapApp {
         if (form) {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
-                this.handleInsertMap();
+                this.handleInsertMapWithEntities();
             });
         }
     }
@@ -1227,18 +1255,90 @@ class BeismanMapApp {
         this.navigateTo('map-details');
     }
 
-    async handleInsertMap() {
+    // NEW: Add entity to temporary list
+    addTempEntity() {
+        const entityName = document.getElementById('new-entity-name').value.trim();
+
+        // Basic validation
+        if (!entityName) {
+            alert('Please enter an entity name.');
+            return;
+        }
+
+        if (entityName.length > 255) {
+            alert('Entity name is too long. Please keep it under 255 characters.');
+            return;
+        }
+
+        // Check for duplicates
+        if (this.tempEntitiesList.includes(entityName)) {
+            alert('This entity is already in the list.');
+            return;
+        }
+
+        // Add to temporary list
+        this.tempEntitiesList.push(entityName);
+        
+        // Clear input
+        document.getElementById('new-entity-name').value = '';
+        
+        // Update display
+        this.updateTempEntitiesDisplay();
+        
+        console.log(`➕ Added entity "${entityName}" to temporary list`);
+    }
+
+    // NEW: Remove entity from temporary list
+    removeTempEntity(entityName) {
+        const index = this.tempEntitiesList.indexOf(entityName);
+        if (index > -1) {
+            this.tempEntitiesList.splice(index, 1);
+            this.updateTempEntitiesDisplay();
+            console.log(`🗑️ Removed entity "${entityName}" from temporary list`);
+        }
+    }
+
+    // NEW: Update temporary entities display
+    updateTempEntitiesDisplay() {
+        const tempEntitiesList = document.getElementById('temp-entities-list');
+        if (!tempEntitiesList) return;
+
+        if (this.tempEntitiesList.length === 0) {
+            tempEntitiesList.innerHTML = '<div class="status-message info">No entities added yet. Add entities above or insert map without entities.</div>';
+        } else {
+            tempEntitiesList.innerHTML = this.tempEntitiesList.map(entityName => `
+                <div class="browse-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <div style="flex: 1;">${entityName}</div>
+                    <div>
+                        <button type="button" class="windows-button" onclick="beismanApp.removeTempEntity('${entityName}')" style="color: #ff0000; font-size: 10px;">Remove</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+    }
+
+    // ENHANCED: Insert map with entities
+    async handleInsertMapWithEntities() {
         const traceNumber = document.getElementById('trace-number').value.trim();
         const drawer = document.getElementById('drawer').value.trim();
         const description = document.getElementById('description').value.trim();
 
         if (!traceNumber || !drawer || !description) {
-            alert('Please fill in all fields.');
+            alert('Please fill in all required map fields.');
             return;
         }
 
         try {
-            const response = await fetch('/api/maps', {
+            // Show loading state
+            const submitButton = document.querySelector('#insert-map-form button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Inserting...';
+            submitButton.disabled = true;
+
+            console.log(`💾 Inserting map ${traceNumber} with ${this.tempEntitiesList.length} entities`);
+
+            // Step 1: Insert the map
+            const mapResponse = await fetch('/api/maps', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -1252,18 +1352,74 @@ class BeismanMapApp {
                 })
             });
 
-            const result = await response.json();
+            const mapResult = await mapResponse.json();
 
-            if (result.success) {
-                alert('Map inserted successfully!');
-                document.getElementById('insert-map-form').reset();
-            } else {
-                alert(result.message || 'Failed to insert map');
+            if (!mapResult.success) {
+                throw new Error(mapResult.message || 'Failed to insert map');
             }
+
+            console.log(`✅ Map ${traceNumber} inserted successfully`);
+
+            // Step 2: Insert entities (if any)
+            if (this.tempEntitiesList.length > 0) {
+                console.log(`📝 Adding ${this.tempEntitiesList.length} entities to map ${traceNumber}`);
+                
+                let successCount = 0;
+                let failedEntities = [];
+
+                for (const entityName of this.tempEntitiesList) {
+                    try {
+                        const entityResponse = await fetch(`/api/entities/map/${traceNumber}/add?entity_name=${encodeURIComponent(entityName)}`, {
+                            method: 'POST',
+                            credentials: 'include'
+                        });
+
+                        const entityResult = await entityResponse.json();
+
+                        if (entityResult.success) {
+                            successCount++;
+                            console.log(`✅ Entity "${entityName}" added to map ${traceNumber}`);
+                        } else {
+                            failedEntities.push(entityName);
+                            console.error(`❌ Failed to add entity "${entityName}": ${entityResult.message}`);
+                        }
+                    } catch (error) {
+                        failedEntities.push(entityName);
+                        console.error(`❌ Error adding entity "${entityName}":`, error);
+                    }
+                }
+
+                // Report results
+                if (failedEntities.length === 0) {
+                    alert(`Map and all ${successCount} entities inserted successfully!`);
+                } else {
+                    alert(`Map inserted successfully!\n${successCount} entities added successfully.\n${failedEntities.length} entities failed: ${failedEntities.join(', ')}`);
+                }
+            } else {
+                alert('Map inserted successfully!');
+            }
+
+            // Reset form and temporary list
+            document.getElementById('insert-map-form').reset();
+            this.tempEntitiesList = [];
+            this.updateTempEntitiesDisplay();
+
         } catch (error) {
-            console.error('❌ Error inserting map:', error);
-            alert('Network error while inserting map');
+            console.error('❌ Error inserting map with entities:', error);
+            alert(`Error inserting map: ${error.message}`);
+        } finally {
+            // Reset button state
+            const submitButton = document.querySelector('#insert-map-form button[type="submit"]');
+            if (submitButton) {
+                submitButton.textContent = 'Insert Map & Entities';
+                submitButton.disabled = false;
+            }
         }
+    }
+
+    // LEGACY: Keep original method for backward compatibility
+    async handleInsertMap() {
+        return this.handleInsertMapWithEntities();
     }
 
     async searchMaps() {
